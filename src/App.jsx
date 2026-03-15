@@ -23,7 +23,7 @@ function App() {
   const { searchQuery, setSearchQuery, activeGenre, setActiveGenre, filteredSets } = useSearch();
   const { favorites, toggleFavorite, isFavorite } = useFavorites();
   const { playChord, playLoop, stopLoop, isLooping, isMuted, toggleMute, playMode, togglePlayMode } = useAudio();
-  const { theoryMode, toggleTheoryMode } = useSettings();
+  // useSettings kept for future preferences; theoryMode now always on
 
   return (
     <div className="app-shell">
@@ -72,8 +72,6 @@ function App() {
         toggleMute={toggleMute}
         playMode={playMode}
         togglePlayMode={togglePlayMode}
-        theoryMode={theoryMode}
-        toggleTheoryMode={toggleTheoryMode}
       />
 
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />

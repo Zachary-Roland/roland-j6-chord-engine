@@ -11,6 +11,8 @@ export default function Scratchpad({
   onStop,
   isPlaying,
   genreColor,
+  playMode,
+  onTogglePlayMode,
 }) {
   const chipBg = genreColor + '26'; // 15% opacity
 
@@ -75,6 +77,15 @@ export default function Scratchpad({
               aria-label="Increase BPM"
             >
               +
+            </button>
+            <button
+              className={`scratchpad-mode-btn${playMode === 'arp' ? ' scratchpad-mode-btn--active' : ''}`}
+              onClick={onTogglePlayMode}
+              aria-label={playMode === 'chord' ? 'Switch to arpeggio' : 'Switch to chord'}
+              title={playMode === 'chord' ? 'Arpeggio' : 'Chord'}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M2 20h2v-4h2v-4h2v-4h2V4h2v4h2v4h2v4h2v4h2"/></svg>
+              <span>{playMode === 'arp' ? 'Arp' : 'Chord'}</span>
             </button>
           </div>
         </>

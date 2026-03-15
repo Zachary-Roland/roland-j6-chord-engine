@@ -24,8 +24,6 @@ export default function ChordSetDetail({
   toggleMute,
   playMode,
   togglePlayMode,
-  theoryMode,
-  toggleTheoryMode,
 }) {
   const [selectedKey, setSelectedKey] = useState('C');
   const scratchpad = useScratchpad(set?.id ?? 0);
@@ -132,14 +130,6 @@ export default function ChordSetDetail({
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M2 20h2v-4h2v-4h2v-4h2V4h2v4h2v4h2v4h2v4h2"/></svg>
             </button>
             <button
-              className={`detail-action-btn${theoryMode ? ' detail-action-btn--active' : ''}`}
-              onClick={toggleTheoryMode}
-              aria-label={theoryMode ? 'Disable Theory Mode' : 'Enable Theory Mode'}
-              title="Theory Mode"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 3v13"/><path d="M12 16a4 4 0 1 1-4-4h4"/><path d="M18 7l-6 2"/></svg>
-            </button>
-            <button
               className="detail-action-btn"
               onClick={handleClose}
               aria-label="Close"
@@ -193,6 +183,8 @@ export default function ChordSetDetail({
             onStop={handleStopScratchpad}
             isPlaying={isLooping}
             genreColor={genreColor}
+            playMode={playMode}
+            onTogglePlayMode={togglePlayMode}
           />
         </div>
 
@@ -201,10 +193,10 @@ export default function ChordSetDetail({
           <SimilarSets currentSet={set} onSelectSet={handleSelectSimilar} />
         </div>
 
-        {/* Theory Mode */}
-        {theoryMode && set.chords[selectedKey] && (
+        {/* Scale Suggestions */}
+        {set.chords[selectedKey] && (
           <div className="detail-section">
-            <div className="detail-section-title">Theory Mode</div>
+            <div className="detail-section-title">Scale Suggestions</div>
             <TheoryMode
               chordName={set.chords[selectedKey].name}
               keyName={selectedKey}
