@@ -1,15 +1,8 @@
 import { useMemo } from 'react';
 import { chordSets } from '../data/chordSets';
 import { getGenreColor } from '../data/genreConfig';
+import { needsDarkText } from '../utils/color';
 import './SimilarSets.css';
-
-function needsDarkText(hexColor) {
-  const r = parseInt(hexColor.slice(1, 3), 16);
-  const g = parseInt(hexColor.slice(3, 5), 16);
-  const b = parseInt(hexColor.slice(5, 7), 16);
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  return luminance > 0.5;
-}
 
 const getSimilarSets = (currentSet) => {
   const sameFamily = chordSets.filter(

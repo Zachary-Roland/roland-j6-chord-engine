@@ -71,6 +71,7 @@
 
 .variation-legend {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   padding: 12px;
   background: var(--surface);

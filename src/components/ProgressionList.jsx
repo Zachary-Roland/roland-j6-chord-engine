@@ -12,6 +12,7 @@ export default function ProgressionList({
   stopLoop,
   isLooping,
   loopRepeat = 'once',
+  defaultBpm = 90,
   onAddToScratchpad,
 }) {
   const [playingId, setPlayingId] = useState(null);
@@ -34,7 +35,7 @@ export default function ProgressionList({
       stopLoop();
     }
     setPlayingId(progressionId);
-    playLoop(chords, 90, loopRepeat);
+    playLoop(chords, defaultBpm, loopRepeat);
   };
 
   const handleStop = () => {

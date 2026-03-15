@@ -23,7 +23,6 @@ function App() {
   const [selectedSet, setSelectedSet] = useState(null);
   const { searchQuery, setSearchQuery, activeGenre, setActiveGenre, filteredSets } = useSearch();
   const { favorites, toggleFavorite, isFavorite } = useFavorites();
-  const { playChord, playLoop, stopLoop, isLooping, isMuted, toggleMute, playMode, togglePlayMode } = useAudio();
   const {
     scratchpadMode, setScratchpadMode,
     defaultPlayMode, setDefaultPlayMode,
@@ -32,6 +31,7 @@ function App() {
     scratchpadAutoAdd, setScratchpadAutoAdd,
     loopRepeat, setLoopRepeat,
   } = useSettings();
+  const { playChord, playLoop, stopLoop, isLooping, isMuted, toggleMute, playMode, togglePlayMode } = useAudio(defaultPlayMode);
 
   return (
     <div className="app-shell">

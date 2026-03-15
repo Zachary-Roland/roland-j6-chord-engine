@@ -2,15 +2,6 @@
   padding: 16px;
 }
 
-.scratchpad-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-sub);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 12px;
-}
-
 .scratchpad-steps {
   display: flex;
   align-items: center;

@@ -25,6 +25,10 @@ export default function FavoritesList({ favorites, onToggleFavorite, onSelectSet
     navigator.clipboard.writeText(buildCopyText()).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+    }).catch(() => {
+      // Clipboard API not available or permission denied
+      setCopied(false);
+      alert('Unable to copy to clipboard. Please copy manually.');
     });
   }
 

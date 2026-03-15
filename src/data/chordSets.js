@@ -20,7 +20,6 @@ export const chordSets = [
       "A#": { name: "Gm/A#",    notes: ["G4","D4","A#3","A#2"] },
       "B":  { name: "G/B",      notes: ["G4","D4","B3","B2"] }
     },
-    related: []
   },
   {
     id: 2,
@@ -40,7 +39,6 @@ export const chordSets = [
       "A#": { name: "C/A#",     notes: ["F4","D4","A3","A#2"] },
       "B":  { name: "Bm7b5",    notes: ["F4","D4","A3","B2"] }
     },
-    related: []
   },
   {
     id: 3,
@@ -60,7 +58,6 @@ export const chordSets = [
       "A#": { name: "A#9",      notes: ["D4","C4","G#3","A#2"] },
       "B":  { name: "Bm7(11)",  notes: ["E4","D4","A3","B2"] }
     },
-    related: []
   },
   {
     id: 4,
@@ -80,7 +77,6 @@ export const chordSets = [
       "A#": { name: "A#7(13)",  notes: ["G4","D4","G#3","A#2"] },
       "B":  { name: "Bm7(11)",  notes: ["E4","D4","A3","B2"] }
     },
-    related: []
   },
   {
     id: 5,
@@ -100,7 +96,6 @@ export const chordSets = [
       "A#": { name: "A#M9",     notes: ["C5","A4","D4","A#3"] },
       "B":  { name: "BM9",      notes: ["C#5","A#4","D#4","B3"] }
     },
-    related: []
   },
   {
     id: 6,
@@ -120,7 +115,6 @@ export const chordSets = [
       "A#": { name: "A#7(13)",  notes: ["F4","D4","A3","A#2"] },
       "B":  { name: "Bm7b5",    notes: ["F4","D4","A3","B2"] }
     },
-    related: []
   },
   {
     id: 7,
@@ -140,7 +134,6 @@ export const chordSets = [
       "A#": { name: "A#",       notes: ["A#4","F4","D4","A#2"] },
       "B":  { name: "Bdim",     notes: ["B4","F4","D4","B2"] }
     },
-    related: []
   },
   {
     id: 8,
@@ -160,7 +153,6 @@ export const chordSets = [
       "A#": { name: "A#",       notes: ["A#4","F4","D4","A#2"] },
       "B":  { name: "Bdim7",    notes: ["G#4","F4","D4","B2"] }
     },
-    related: []
   },
   {
     id: 9,
@@ -180,7 +172,6 @@ export const chordSets = [
       "A#": { name: "A#",       notes: ["A#4","F4","D4","A#2"] },
       "B":  { name: "Bdim",     notes: ["B4","F4","D4","B2"] }
     },
-    related: []
   },
   {
     id: 10,
@@ -200,7 +191,6 @@ export const chordSets = [
       "A#": { name: "G#/A#",    notes: ["F4","D4","G#3","A#2"] },
       "B":  { name: "Bdim7",    notes: ["F4","D4","G#3","B2"] }
     },
-    related: []
   },
   {
     id: 11,
@@ -220,7 +210,6 @@ export const chordSets = [
       "A#": { name: "Cm7/A#",   notes: ["G4","D#4","C4","A#2"] },
       "B":  { name: "Baug#9",   notes: ["G4","D#4","D4","B2"] }
     },
-    related: []
   },
   {
     id: 12,
@@ -240,7 +229,6 @@ export const chordSets = [
       "A#": { name: "A#m7",     notes: ["F4","C#4","G#3","A#2"] },
       "B":  { name: "Bdim7",    notes: ["F4","D4","G#3","B2"] }
     },
-    related: []
   },
   {
     id: 13,
@@ -260,7 +248,6 @@ export const chordSets = [
       "A#": { name: "A#m7",     notes: ["F4","D4","A3","A#2"] },
       "B":  { name: "Bm7b5",    notes: ["F4","D4","A3","B2"] }
     },
-    related: []
   },
   {
     id: 14,
@@ -280,7 +267,6 @@ export const chordSets = [
       "A#": { name: "A#",   notes: ["A#5","A#4"] },
       "B":  { name: "B",    notes: ["B5","B4"] }
     },
-    related: []
   },
   {
     id: 15,
@@ -300,7 +286,6 @@ export const chordSets = [
       "A#": { name: "A#",   notes: ["D#5","A#4"] },
       "B":  { name: "B",    notes: ["E5","B4"] }
     },
-    related: []
   },
   {
     id: 16,
@@ -320,7 +305,6 @@ export const chordSets = [
       "A#": { name: "A#",   notes: ["F5","A#4"] },
       "B":  { name: "B",    notes: ["F#5","B4"] }
     },
-    related: []
   },
   {
     id: 17,
@@ -340,7 +324,6 @@ export const chordSets = [
       "A#": { name: "A#",   notes: ["F4","D4","A#3"] },
       "B":  { name: "B",    notes: ["F#4","D#4","B3"] }
     },
-    related: []
   },
   {
     id: 18,
@@ -360,7 +343,6 @@ export const chordSets = [
       "A#": { name: "A#m",  notes: ["F4","C#4","A#3"] },
       "B":  { name: "Bm",   notes: ["F#4","D4","B3"] }
     },
-    related: []
   },
   {
     id: 19,
@@ -380,7 +362,6 @@ export const chordSets = [
       "A#": { name: "A#M7",   notes: ["A4","F4","D4","A#3"] },
       "B":  { name: "BM7",    notes: ["A#4","F#4","D#4","B3"] }
     },
-    related: []
   },
   {
     id: 20,
@@ -400,7 +381,6 @@ export const chordSets = [
       "A#": { name: "A#m7",   notes: ["G#4","F4","C#4","A#3"] },
       "B":  { name: "Bm7",    notes: ["A4","F#4","D4","B3"] }
     },
-    related: []
   },
   {
     id: 21,
@@ -420,7 +400,6 @@ export const chordSets = [
       "A#": { name: "A#M9",   notes: ["C5","A4","D4","A#3"] },
       "B":  { name: "BM9",    notes: ["C#5","A#4","D#4","B3"] }
     },
-    related: []
   },
   {
     id: 22,
@@ -440,7 +419,6 @@ export const chordSets = [
       "A#": { name: "A#m9",   notes: ["C5","G#4","C#4","A#3"] },
       "B":  { name: "Bm9",    notes: ["C#5","A4","D4","B3"] }
     },
-    related: []
   },
   {
     id: 23,
@@ -460,7 +438,6 @@ export const chordSets = [
       "A#": { name: "A#M9/#11",  notes: ["E5","C5","A4","A#3"] },
       "B":  { name: "BM9/#11",   notes: ["F5","C#5","A#4","B3"] }
     },
-    related: []
   },
   {
     id: 24,
@@ -480,7 +457,6 @@ export const chordSets = [
       "A#": { name: "A#m9/11",  notes: ["D#5","C5","G#4","A#3"] },
       "B":  { name: "Bm9/11",   notes: ["E5","C#5","A4","B3"] }
     },
-    related: []
   },
   {
     id: 25,
@@ -500,7 +476,6 @@ export const chordSets = [
       "A#": { name: "CM7",  notes: ["C6","G5","E5","B4"] },
       "B":  { name: "CM7",  notes: ["B5","E5","C5","G4"] }
     },
-    related: []
   },
   {
     id: 26,
@@ -520,7 +495,6 @@ export const chordSets = [
       "A#": { name: "CM7",  notes: ["E4","C4","B3","G3"] },
       "B":  { name: "CM7",  notes: ["B4","G4","E4","C4"] }
     },
-    related: []
   },
   {
     id: 27,
@@ -540,7 +514,6 @@ export const chordSets = [
       "A#": { name: "C",    notes: ["D7","B5","E5"] },
       "B":  { name: "Em",   notes: ["G5","B4","E4"] }
     },
-    related: []
   },
   {
     id: 28,
@@ -560,7 +533,6 @@ export const chordSets = [
       "A#": { name: "Eaug/A#",  notes: ["C4","G#3","E3","A#2"] },
       "B":  { name: "G7/B",     notes: ["B3","G3","F3","B2"] }
     },
-    related: []
   },
   {
     id: 29,
@@ -580,7 +552,6 @@ export const chordSets = [
       "A#": { name: "Dm",       notes: ["F4","A3","A2","D2"] },
       "B":  { name: "G7",       notes: ["G4","B3","F3","G2"] }
     },
-    related: []
   },
   {
     id: 30,
@@ -600,7 +571,6 @@ export const chordSets = [
       "A#": { name: "G#",        notes: ["C4","G#3","D#3","G#2"] },
       "B":  { name: "F/A",       notes: ["B3","G3","F3","B2"] }
     },
-    related: []
   },
   {
     id: 31,
@@ -620,7 +590,6 @@ export const chordSets = [
       "A#": { name: "F/Bb",     notes: ["A4","F4","C4","A#3"] },
       "B":  { name: "G7/B",     notes: ["G4","F4","D4","B3"] }
     },
-    related: []
   },
   {
     id: 32,
@@ -640,7 +609,6 @@ export const chordSets = [
       "A#": { name: "F7/A",     notes: ["G4","C4","A#3","G#3"] },
       "B":  { name: "A#add11",  notes: ["F4","D#3","B3","G#3"] }
     },
-    related: []
   },
   {
     id: 33,
@@ -660,7 +628,6 @@ export const chordSets = [
       "A#": { name: "Dm",       notes: ["F4","D4","A3","D3"] },
       "B":  { name: "G/F",      notes: ["G4","D4","B3","F3"] }
     },
-    related: []
   },
   {
     id: 34,
@@ -680,7 +647,6 @@ export const chordSets = [
       "A#": { name: "Gsus2",    notes: ["A5","D5","A4","G4"] },
       "B":  { name: "A#sus2",   notes: ["C6","F5","C5","A#4"] }
     },
-    related: []
   },
   {
     id: 35,
@@ -700,7 +666,6 @@ export const chordSets = [
       "A#": { name: "A#M7",     notes: ["A5","D5","F4","A#3"] },
       "B":  { name: "Gm7",      notes: ["G5","C5","D4","G3"] }
     },
-    related: []
   },
   {
     id: 36,
@@ -720,7 +685,6 @@ export const chordSets = [
       "A#": { name: "Absus2/F",   notes: ["Ab5","Eb5","Bb4","F4"] },
       "B":  { name: "Bbsus2/G",   notes: ["Bb5","F5","C5","G4"] }
     },
-    related: []
   },
   {
     id: 37,
@@ -740,7 +704,6 @@ export const chordSets = [
       "A#": { name: "E7sus4",     notes: ["F#5","B4","A4","D4"] },
       "B":  { name: "Em7b5/F",    notes: ["A5","D5","B4","E4"] }
     },
-    related: []
   },
   {
     id: 38,
@@ -760,7 +723,6 @@ export const chordSets = [
       "A#": { name: "Fsus4",      notes: ["F4","C4","A#3","F3"] },
       "B":  { name: "G",          notes: ["G4","D4","B3","B2"] }
     },
-    related: []
   },
   {
     id: 39,
@@ -780,7 +742,6 @@ export const chordSets = [
       "A#": { name: "C7/A#",      notes: ["G4","E4","C4","A#3"] },
       "B":  { name: "A#m6",       notes: ["G4","F4","C#4","A#3"] }
     },
-    related: []
   },
   {
     id: 40,
@@ -800,7 +761,6 @@ export const chordSets = [
       "A#": { name: "Fadd9",      notes: ["C5","A4","G4","F4"] },
       "B":  { name: "Gadd9",      notes: ["D5","B4","A4","G4"] }
     },
-    related: []
   },
   {
     id: 41,
@@ -820,7 +780,6 @@ export const chordSets = [
       "A#": { name: "Csus2/A#",   notes: ["C4","G3","D3","A#2"] },
       "B":  { name: "G7/B",       notes: ["B3","G3","F3","B2"] }
     },
-    related: []
   },
   {
     id: 42,
@@ -840,7 +799,6 @@ export const chordSets = [
       "A#": { name: "A#",         notes: ["D5","F4","A#3","A#2"] },
       "B":  { name: "G7/B",       notes: ["D5","F4","G3","B2"] }
     },
-    related: []
   },
   {
     id: 43,
@@ -860,7 +818,6 @@ export const chordSets = [
       "A#": { name: "A#6",        notes: ["F4","D4","G3","A#2"] },
       "B":  { name: "Fm7/B",      notes: ["F4","D#4","G#3","B2"] }
     },
-    related: []
   },
   {
     id: 44,
@@ -880,7 +837,6 @@ export const chordSets = [
       "A#": { name: "Fm7",        notes: ["G#4","D#4","C4","F3"] },
       "B":  { name: "G5",         notes: ["G4","D4","D3","G3"] }
     },
-    related: []
   },
   {
     id: 45,
@@ -900,7 +856,6 @@ export const chordSets = [
       "A#": { name: "Bb",     notes: ["Bb3","F3","D3"] },
       "B":  { name: "Cm",     notes: ["C4","Ab3","Eb3"] }
     },
-    related: []
   },
   {
     id: 46,
@@ -920,7 +875,6 @@ export const chordSets = [
       "A#": { name: "D",      notes: ["A3","D3","F#2"] },
       "B":  { name: "G",      notes: ["B3","D3","G4"] }
     },
-    related: []
   },
   {
     id: 47,
@@ -940,7 +894,6 @@ export const chordSets = [
       "A#": { name: "G#M7",   notes: ["G4","D#4","C4","G#3"] },
       "B":  { name: "C#/C",   notes: ["G#4","F4","C#4","C4"] }
     },
-    related: []
   },
   {
     id: 48,
@@ -960,7 +913,6 @@ export const chordSets = [
       "A#": { name: "Bb",       notes: ["D4","F3","Bb2","Bb1"] },
       "B":  { name: "G7/B",     notes: ["D4","G3","F3","B1"] }
     },
-    related: []
   },
   {
     id: 49,
@@ -980,7 +932,6 @@ export const chordSets = [
       "A#": { name: "BbM7",     notes: ["D4","A3","F3","B2"] },
       "B":  { name: "Bm7b5",    notes: ["D4","A3","F3","B2"] }
     },
-    related: []
   },
   {
     id: 50,
@@ -1000,7 +951,6 @@ export const chordSets = [
       "A#": { name: "Em7",      notes: ["G5","D5","B4","E4"] },
       "B":  { name: "FM7",      notes: ["A5","E5","C5","F4"] }
     },
-    related: []
   },
   {
     id: 51,
@@ -1020,7 +970,6 @@ export const chordSets = [
       "A#": { name: "A#m7",     notes: ["G#4","E4","B3","A#3"] },
       "B":  { name: "F#/B",     notes: ["G#4","F4","C#4","B3"] }
     },
-    related: []
   },
   {
     id: 52,
@@ -1040,7 +989,6 @@ export const chordSets = [
       "A#": { name: "A#m7",     notes: ["G#4","E4","B3","A#3"] },
       "B":  { name: "F#M7",     notes: ["G#5","C#5","F4","A#3"] }
     },
-    related: []
   },
   {
     id: 53,
@@ -1060,7 +1008,6 @@ export const chordSets = [
       "A#": { name: "Csus2/E",  notes: ["G4","D4","C4","E3"] },
       "B":  { name: "Fm",       notes: ["F4","C4","G#3","F3"] }
     },
-    related: []
   },
   {
     id: 54,
@@ -1080,7 +1027,6 @@ export const chordSets = [
       "A#": { name: "Am7",      notes: ["G4","E4","C4","A3"] },
       "B":  { name: "Bm7",      notes: ["A4","F#4","D4","B3"] }
     },
-    related: []
   },
   {
     id: 55,
@@ -1100,7 +1046,6 @@ export const chordSets = [
       "A#": { name: "Gm11/Bb",    notes: ["G5","D5","C5","Bb4"] },
       "B":  { name: "CM7#5/G#",   notes: ["E5","C5","B4","G#4"] }
     },
-    related: []
   },
   {
     id: 56,
@@ -1120,7 +1065,6 @@ export const chordSets = [
       "A#": { name: "Am7",      notes: ["C6","G5","A4","E4"] },
       "B":  { name: "BbM7",     notes: ["D6","A5","Bb4","F4"] }
     },
-    related: []
   },
   {
     id: 57,
@@ -1140,7 +1084,6 @@ export const chordSets = [
       "A#": { name: "Bb5add9/b13", notes: ["F4","C4","F#3","A#2"] },
       "B":  { name: "C7sus4",     notes: ["A#3","G3","F3","C3"] }
     },
-    related: []
   },
   {
     id: 58,
@@ -1160,7 +1103,6 @@ export const chordSets = [
       "A#": { name: "D#/A#",    notes: ["G4","D#4","A#3","A#2"] },
       "B":  { name: "G/B",      notes: ["G4","D4","B3","B2"] }
     },
-    related: []
   },
   {
     id: 59,
@@ -1180,7 +1122,6 @@ export const chordSets = [
       "A#": { name: "Am6",      notes: ["D#5","G#4","C#4","C4"] },
       "B":  { name: "Bm9",      notes: ["A#5","G#4","C#4","B3"] }
     },
-    related: []
   },
   {
     id: 60,
@@ -1200,7 +1141,6 @@ export const chordSets = [
       "A#": { name: "C#M9(no 3)",   notes: ["G#4","F#4","B3","A3"] },
       "B":  { name: "BM13(no3)",    notes: ["D#5","G#4","C#4","C4"] }
     },
-    related: []
   },
   {
     id: 61,
@@ -1220,7 +1160,6 @@ export const chordSets = [
       "A#": { name: "A6",        notes: ["C#5","F#4","E4","A3"] },
       "B":  { name: "Bsus9/13",  notes: ["G#5","C#5","F#4","B3"] }
     },
-    related: []
   },
   {
     id: 62,
@@ -1240,7 +1179,6 @@ export const chordSets = [
       "A#": { name: "Bbsus9",   notes: ["C5","F4","D#4","A#3"] },
       "B":  { name: "BM13",     notes: ["D#5","A#4","G#4","B3"] }
     },
-    related: []
   },
   {
     id: 63,
@@ -1260,7 +1198,6 @@ export const chordSets = [
       "A#": { name: "Bb6",      notes: ["D5","G4","B3","F3"] },
       "B":  { name: "Bm7",      notes: ["D5","A4","B3","F#3"] }
     },
-    related: []
   },
   {
     id: 64,
@@ -1280,7 +1217,6 @@ export const chordSets = [
       "A#": { name: "GbM7",     notes: ["C#5","F#4","F4","A#3"] },
       "B":  { name: "B6",       notes: ["D#5","G#4","F#4","B3"] }
     },
-    related: []
   },
   {
     id: 65,
@@ -1300,7 +1236,6 @@ export const chordSets = [
       "A#": { name: "A#m7 add 13",  notes: ["G4","C#4","G#3","A#2"] },
       "B":  { name: "Bm7/b13",      notes: ["G4","D3","A3","B2"] }
     },
-    related: []
   },
   {
     id: 66,
@@ -1320,7 +1255,6 @@ export const chordSets = [
       "A#": { name: "A#7/b13",  notes: ["G#4","F#4","D4","A#3"] },
       "B":  { name: "F#/B",     notes: ["A#4","F#4","C#4","B3"] }
     },
-    related: []
   },
   {
     id: 67,
@@ -1340,7 +1274,6 @@ export const chordSets = [
       "A#": { name: "D/C",        notes: ["D4","A3","F#3","C2"] },
       "B":  { name: "C#dim",      notes: ["C#4","G3","E3","C#2"] }
     },
-    related: []
   },
   {
     id: 68,
@@ -1360,7 +1293,6 @@ export const chordSets = [
       "A#": { name: "Bbsus",        notes: ["F4","D#4","D4","A#3"] },
       "B":  { name: "Bbsus4/b9",    notes: ["A#4","D#4","B3","A#3"] }
     },
-    related: []
   },
   {
     id: 69,
@@ -1380,7 +1312,6 @@ export const chordSets = [
       "A#": { name: "F#add9/A#",  notes: ["F#3","D#3","B2","G#2"] },
       "B":  { name: "BM add4",    notes: ["G#3","F#3","C#3","A#2"] }
     },
-    related: []
   },
   {
     id: 70,
@@ -1400,7 +1331,6 @@ export const chordSets = [
       "A#": { name: "Bm7",           notes: ["F#4","D4","A3","B2"] },
       "B":  { name: "B7",            notes: ["F#4","D#4","A3","B2"] }
     },
-    related: []
   },
   {
     id: 71,
@@ -1420,7 +1350,6 @@ export const chordSets = [
       "A#": { name: "Bb7add9",    notes: ["Ab4","D4","C4","Bb3"] },
       "B":  { name: "C11sus2",    notes: ["D4","Bb3","F3","C3"] }
     },
-    related: []
   },
   {
     id: 72,
@@ -1440,7 +1369,6 @@ export const chordSets = [
       "A#": { name: "Fm7b5/B",    notes: ["G4","A#3","G#3","D3"] },
       "B":  { name: "Bb13/D",     notes: ["G4","D4","A#3","D3"] }
     },
-    related: []
   },
   {
     id: 73,
@@ -1460,7 +1388,6 @@ export const chordSets = [
       "A#": { name: "Bb13",     notes: ["G5","D5","Bb4","Ab4"] },
       "B":  { name: "Bb6",      notes: ["G5","F5","D5","Bb4"] }
     },
-    related: []
   },
   {
     id: 74,
@@ -1480,7 +1407,6 @@ export const chordSets = [
       "A#": { name: "Dm7",         notes: ["F4","C4","F3","D3"] },
       "B":  { name: "Emb9/F",      notes: ["E4","B3","G3","F3"] }
     },
-    related: []
   },
   {
     id: 75,
@@ -1500,7 +1426,6 @@ export const chordSets = [
       "A#": { name: "BbM7",     notes: ["A5","D5","Bb4","F4"] },
       "B":  { name: "Bm7",      notes: ["A5","D5","B4","F#4"] }
     },
-    related: []
   },
   {
     id: 76,
@@ -1520,7 +1445,6 @@ export const chordSets = [
       "A#": { name: "BbM7",     notes: ["A5","D5","Bb4","F4"] },
       "B":  { name: "Bm7",      notes: ["A5","D5","B4","F#4"] }
     },
-    related: []
   },
   {
     id: 77,
@@ -1540,7 +1464,6 @@ export const chordSets = [
       "A#": { name: "BbM7",     notes: ["D5","A4","F4","A#3"] },
       "B":  { name: "Bm7",      notes: ["D5","A4","F#4","B3"] }
     },
-    related: []
   },
   {
     id: 78,
@@ -1560,7 +1483,6 @@ export const chordSets = [
       "A#": { name: "Bb6",      notes: ["G4","F4","D4","Bb3"] },
       "B":  { name: "Bm7b5",    notes: ["A4","F4","D4","B3"] }
     },
-    related: []
   },
   {
     id: 79,
@@ -1580,7 +1502,6 @@ export const chordSets = [
       "A#": { name: "Ebm/Bb",   notes: ["Gb4","Eb4","Bb3"] },
       "B":  { name: "B",        notes: ["F#4","D#4","B3"] }
     },
-    related: []
   },
   {
     id: 80,
@@ -1600,7 +1521,6 @@ export const chordSets = [
       "A#": { name: "Bbm9",     notes: ["A#4","F#4","C#4","B3"] },
       "B":  { name: "Gb/B",     notes: ["A#4","F#4","C#4","B3"] }
     },
-    related: []
   },
   {
     id: 81,
@@ -1620,7 +1540,6 @@ export const chordSets = [
       "A#": { name: "Bbm9",       notes: ["C4","F3","Db3","Bb2"] },
       "B":  { name: "BM7#11",     notes: ["Bb3","F3","Eb3","B2"] }
     },
-    related: []
   },
   {
     id: 82,
@@ -1640,7 +1559,6 @@ export const chordSets = [
       "A#": { name: "Fm7",      notes: ["C5","Ab4","Eb4","F3"] },
       "B":  { name: "Ab/Gb",    notes: ["C5","Ab4","Eb4","Gb3"] }
     },
-    related: []
   },
   {
     id: 83,
@@ -1660,7 +1578,6 @@ export const chordSets = [
       "A#": { name: "BbM9",     notes: ["C6","A5","D5","Bb4"] },
       "B":  { name: "G13b9",    notes: ["E5","B4","Ab4","G3"] }
     },
-    related: []
   },
   {
     id: 84,
@@ -1680,7 +1597,6 @@ export const chordSets = [
       "A#": { name: "Bb13",     notes: ["G5","D5","Ab4","Bb3"] },
       "B":  { name: "Eb/B",     notes: ["G5","Eb5","Bb4","B3"] }
     },
-    related: []
   },
   {
     id: 85,
@@ -1700,7 +1616,6 @@ export const chordSets = [
       "A#": { name: "BbM13",     notes: ["A5","D5","C5","Bb3"] },
       "B":  { name: "Bm11b5",    notes: ["G5","D5","Ab4","B3"] }
     },
-    related: []
   },
   {
     id: 86,
@@ -1720,7 +1635,6 @@ export const chordSets = [
       "A#": { name: "BbM9",       notes: ["A5","D5","C5","Bb3"] },
       "B":  { name: "Bdim7",      notes: ["G5","D5","Ab4","B3"] }
     },
-    related: []
   },
   {
     id: 87,
@@ -1740,7 +1654,6 @@ export const chordSets = [
       "A#": { name: "Eadd9/G#",   notes: ["B4","F#4","E4","G#3"] },
       "B":  { name: "Asus7",      notes: ["D5","B4","G4","A3"] }
     },
-    related: []
   },
   {
     id: 88,
@@ -1760,7 +1673,6 @@ export const chordSets = [
       "A#": { name: "GbM7/9",     notes: ["Db5","Bb4","Ab4","F4"] },
       "B":  { name: "Abm7/b5",    notes: ["D5","B4","Ab4","Gb4"] }
     },
-    related: []
   },
   {
     id: 89,
@@ -1780,7 +1692,6 @@ export const chordSets = [
       "A#": { name: "Dm7b5",      notes: ["C5","A4","E4","C4"] },
       "B":  { name: "G7/D",       notes: ["B4","G4","F4","D4"] }
     },
-    related: []
   },
   {
     id: 90,
@@ -1800,7 +1711,6 @@ export const chordSets = [
       "A#": { name: "A#11/F",     notes: ["E4","D4","A#3","F3"] },
       "B":  { name: "F#dim7",     notes: ["D#4","C4","A3","F#3"] }
     },
-    related: []
   },
   {
     id: 91,
@@ -1820,7 +1730,6 @@ export const chordSets = [
       "A#": { name: "F6",         notes: ["D4","B3","G3","E3"] },
       "B":  { name: "C6sus2b5",   notes: ["D4","C4","A3","F3"] }
     },
-    related: []
   },
   {
     id: 92,
@@ -1840,7 +1749,6 @@ export const chordSets = [
       "A#": { name: "G#M7/D#",    notes: ["D4","A#3","G3","D#3"] },
       "B":  { name: "F7/D#",      notes: ["C4","A3","F3","D#3"] }
     },
-    related: []
   },
   {
     id: 93,
@@ -1860,7 +1768,6 @@ export const chordSets = [
       "A#": { name: "Fadd9",      notes: ["C4","A3","G3","F3"] },
       "B":  { name: "Cdim7",      notes: ["A3","F#3","D#3","C3"] }
     },
-    related: []
   },
   {
     id: 94,
@@ -1880,7 +1787,6 @@ export const chordSets = [
       "A#": { name: "F/Bb",         notes: ["A4","F4","C4","A#2"] },
       "B":  { name: "Bdim7",        notes: ["G#4","D4","F3","B2"] }
     },
-    related: []
   },
   {
     id: 95,
@@ -1900,7 +1806,6 @@ export const chordSets = [
       "A#": { name: "Fadd9/G",    notes: ["G4","D4","B3","G2"] },
       "B":  { name: "Ddim/G",     notes: ["B4","G4","F4","G2"] }
     },
-    related: []
   },
   {
     id: 96,
@@ -1920,7 +1825,6 @@ export const chordSets = [
       "A#": { name: "C/G",        notes: ["E4","C4","G3","G2"] },
       "B":  { name: "E/G#",       notes: ["E4","B3","G#3","G#2"] }
     },
-    related: []
   },
   {
     id: 97,
@@ -1940,7 +1844,6 @@ export const chordSets = [
       "A#": { name: "C#m7",         notes: ["D#4","B3","F#3","C#3"] },
       "B":  { name: "C#7",          notes: ["E4","B3","G#3","C#3"] }
     },
-    related: []
   },
   {
     id: 98,
@@ -1960,7 +1863,6 @@ export const chordSets = [
       "A#": { name: "Csus2/D",      notes: ["G4","D4","C4","D2"] },
       "B":  { name: "G#dim/D",      notes: ["G#4","D4","B3","D2"] }
     },
-    related: []
   },
   {
     id: 99,
@@ -1980,7 +1882,6 @@ export const chordSets = [
       "A#": { name: "BbM9",          notes: ["D4","A3","C3","A#2"] },
       "B":  { name: "G6/9",          notes: ["E4","A3","G3","B2"] }
     },
-    related: []
   },
   {
     id: 100,
@@ -2000,6 +1901,5 @@ export const chordSets = [
       "A#": { name: "AbDimM7",      notes: ["E5","Ab4","F4","G3"] },
       "B":  { name: "BbM13",        notes: ["G5","B4","F4","Ab3"] }
     },
-    related: []
   },
 ];

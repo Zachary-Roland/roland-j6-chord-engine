@@ -5,7 +5,7 @@ import { noteToFreq } from '../utils/noteToFreq';
 let audioCtx = null;
 
 function getAudioContext() {
-  if (!audioCtx) {
+  if (!audioCtx || audioCtx.state === 'closed') {
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   }
   return audioCtx;
@@ -14,11 +14,12 @@ function getAudioContext() {
 // Playback modes: 'chord' = all notes at once, 'arp' = arpeggiated
 const ARP_NOTE_DURATION = 0.15; // each arp note rings for 150ms
 
-export function useAudio() {
+export function useAudio(initialPlayMode = 'chord') {
   const [isMuted, setIsMuted] = useState(false);
   const [isLooping, setIsLooping] = useState(false);
-  const [playMode, setPlayMode] = useState('chord'); // 'chord' | 'arp'
+  const [playMode, setPlayMode] = useState(initialPlayMode); // 'chord' | 'arp'
   const isLoopingRef = useRef(false);
+  const isMutedRef = useRef(false);
   const loopTimeoutRef = useRef(null);
   const activeOscillators = useRef([]);
 
@@ -86,7 +87,7 @@ export function useAudio() {
   }, []);
 
   const playChord = useCallback((notes, duration = 0.8) => {
-    if (isMuted || !notes || notes.length === 0) return;
+    if (isMutedRef.current || !notes || notes.length === 0) return;
 
     const ctx = getAudioContext();
     ctx.resume();
@@ -106,7 +107,7 @@ export function useAudio() {
         o => !oscs.includes(o)
       );
     }, (duration + 0.5) * 1000);
-  }, [isMuted, playMode, playNotesChord, playNotesArp]);
+  }, [playMode, playNotesChord, playNotesArp]);
 
   const playLoop = useCallback((chordSequence, bpm = 90, repeat = 'once') => {
     if (!chordSequence || chordSequence.length === 0) return;
@@ -167,7 +168,10 @@ export function useAudio() {
   }, [stopAll]);
 
   const toggleMute = useCallback(() => {
-    setIsMuted(m => !m);
+    setIsMuted(m => {
+      isMutedRef.current = !m;
+      return !m;
+    });
   }, []);
 
   const togglePlayMode = useCallback(() => {
@@ -183,6 +187,5 @@ export function useAudio() {
     toggleMute,
     playMode,
     togglePlayMode,
-    stopAll,
   };
 }

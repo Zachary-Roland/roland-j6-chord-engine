@@ -4,7 +4,7 @@ const NOTES = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
 export const transposeKey = (rootKey, semitones) => {
   const rootIndex = NOTES.indexOf(rootKey);
   if (rootIndex === -1) return rootKey;
-  return NOTES[(rootIndex + semitones) % 12];
+  return NOTES[((rootIndex + semitones) % 12 + 12) % 12];
 };
 
 // Given a chord set and a progression (array of semitone offsets),

@@ -229,6 +229,7 @@ export default function ChordSetDetail({
             stopLoop={stopLoop}
             isLooping={isLooping}
             loopRepeat={loopRepeat}
+            defaultBpm={defaultBpm}
             onAddToScratchpad={handleAddToScratchpad}
           />
         </div>
