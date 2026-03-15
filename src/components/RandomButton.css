@@ -1,0 +1,22 @@
+.random-btn {
+  position: fixed;
+  bottom: calc(56px + env(safe-area-inset-bottom, 0px) + 16px);
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 90;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.random-btn:active {
+  transform: scale(0.95);
+}
