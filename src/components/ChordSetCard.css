@@ -1,0 +1,126 @@
+.chord-set-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  border-left-width: 3px;
+  border-left-style: solid;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+  user-select: none;
+}
+
+.chord-set-card:hover {
+  opacity: 0.85;
+}
+
+.chord-set-card:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+/* Grid layout */
+.chord-set-card--grid {
+  display: flex;
+  flex-direction: column;
+  min-height: 72px;
+  padding: 8px 10px;
+  gap: 4px;
+}
+
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-set-number {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.card-c-chord {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  color: var(--text-sub);
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.card-bottom-row {
+  display: flex;
+  align-items: center;
+}
+
+/* List layout */
+.chord-set-card--list {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 12px;
+  gap: 10px;
+}
+
+.card-set-number--list {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.card-chord-preview {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  color: var(--text-sub);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Genre pill */
+.card-genre-pill {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Favorite button */
+.card-favorite-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-sub);
+  flex-shrink: 0;
+  line-height: 0;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.card-favorite-btn:hover {
+  color: var(--orange);
+}
+
+.card-favorite-btn:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.heart-icon--filled {
+  filter: drop-shadow(0 0 2px rgba(232, 71, 10, 0.4));
+}
