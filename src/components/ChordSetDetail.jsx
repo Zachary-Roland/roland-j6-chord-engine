@@ -5,6 +5,7 @@ import ProgressionList from './ProgressionList';
 import Scratchpad from './Scratchpad';
 import SimilarSets from './SimilarSets';
 import TheoryMode from './TheoryMode';
+import { toast } from './Toast';
 import { useScratchpad } from '../hooks/useScratchpad';
 import { getGenreColor } from '../data/genreConfig';
 import './ChordSetDetail.css';
@@ -58,15 +59,26 @@ export default function ChordSetDetail({
     scratchpad.clearSteps();
   };
 
+  const handleClose = () => {
+    if (isLooping) stopLoop();
+    onClose();
+  };
+
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-      onClose();
+      handleClose();
     }
   };
 
   const handleSelectSimilar = (similarSet) => {
+    if (isLooping) stopLoop();
     onClose();
     if (onSelectSet) onSelectSet(similarSet);
+  };
+
+  const handleAddToScratchpad = (chords) => {
+    chords.forEach(c => scratchpad.addStep(c.key));
+    toast(`Added ${chords.length} chords to scratchpad`);
   };
 
   return (
@@ -86,7 +98,10 @@ export default function ChordSetDetail({
           <div className="detail-header-actions">
             <button
               className="detail-action-btn"
-              onClick={() => onToggleFavorite(set.id)}
+              onClick={() => {
+                onToggleFavorite(set.id);
+                toast(isFavorite ? 'Removed from favorites' : 'Added to favorites');
+              }}
               aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             >
               {isFavorite ? '♥' : '♡'}
@@ -104,11 +119,11 @@ export default function ChordSetDetail({
               aria-label={theoryMode ? 'Disable Theory Mode' : 'Enable Theory Mode'}
               title="Theory Mode"
             >
-              ♩
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 3v13"/><path d="M12 16a4 4 0 1 1-4-4h4"/><path d="M18 7l-6 2"/></svg>
             </button>
             <button
               className="detail-action-btn"
-              onClick={onClose}
+              onClick={handleClose}
               aria-label="Close"
             >
               ✕
@@ -142,7 +157,7 @@ export default function ChordSetDetail({
             playLoop={playLoop}
             stopLoop={stopLoop}
             isLooping={isLooping}
-            onAddToScratchpad={() => {}}
+            onAddToScratchpad={handleAddToScratchpad}
           />
         </div>
 

@@ -37,27 +37,30 @@ export function useAudio() {
     masterGain.gain.setValueAtTime(0.15, ctx.currentTime);
     masterGain.connect(ctx.destination);
 
-    const oscs = notes.map(note => {
+    // Subtle arpeggiation: stagger each note by 25ms for a strummed feel
+    const stagger = 0.025;
+    const oscs = notes.map((note, i) => {
       const osc = ctx.createOscillator();
       const noteGain = ctx.createGain();
+      const noteStart = ctx.currentTime + i * stagger;
 
       osc.type = 'triangle';
-      osc.frequency.setValueAtTime(noteToFreq(note), ctx.currentTime);
+      osc.frequency.setValueAtTime(noteToFreq(note), noteStart);
 
       // Attack: 0 → 1 over 20ms
-      noteGain.gain.setValueAtTime(0, ctx.currentTime);
-      noteGain.gain.linearRampToValueAtTime(1, ctx.currentTime + 0.02);
+      noteGain.gain.setValueAtTime(0, noteStart);
+      noteGain.gain.linearRampToValueAtTime(1, noteStart + 0.02);
 
       // Release: 1 → 0 over 400ms, starting at 80% of duration
-      const releaseStart = ctx.currentTime + duration * 0.8;
+      const releaseStart = noteStart + duration * 0.8;
       noteGain.gain.setValueAtTime(1, releaseStart);
       noteGain.gain.linearRampToValueAtTime(0, releaseStart + 0.4);
 
       osc.connect(noteGain);
       noteGain.connect(masterGain);
 
-      osc.start(ctx.currentTime);
-      osc.stop(ctx.currentTime + duration + 0.4);
+      osc.start(noteStart);
+      osc.stop(noteStart + duration + 0.4);
 
       return osc;
     });

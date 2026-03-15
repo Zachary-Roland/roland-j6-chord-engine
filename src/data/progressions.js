@@ -193,5 +193,47 @@ export const progressions = [
     vibe: "The bones of the blues. Add your own story.",
   },
 
-  // Utility / Classical — no progressions (these are specialized sets)
+  // Classical
+  {
+    id: "classical-descent",
+    name: "Descending Bass",
+    genreFamilies: ["classical"],
+    steps: [0, 11, 9, 7],
+    roman: ["I", "vii", "vi", "V"],
+    vibe: "Baroque-inspired stepwise descent.",
+  },
+  {
+    id: "classical-circle",
+    name: "Circle of Fifths",
+    genreFamilies: ["classical"],
+    steps: [0, 5, 10, 3],
+    roman: ["I", "IV", "bVII", "bIII"],
+    vibe: "Stately motion through the circle.",
+  },
+
+  // Utility — generic progressions that work with any set
+  {
+    id: "utility-major-basic",
+    name: "Major Basics",
+    genreFamilies: ["utility"],
+    steps: [0, 5, 7, 0],
+    roman: ["I", "IV", "V", "I"],
+    vibe: "The most fundamental progression. Start here.",
+  },
+  {
+    id: "utility-minor-basic",
+    name: "Minor Basics",
+    genreFamilies: ["utility"],
+    steps: [0, 5, 7, 0],
+    roman: ["i", "iv", "v", "i"],
+    vibe: "Same shape, minor color. Mood shift.",
+  },
+  {
+    id: "utility-chromatic-walk",
+    name: "Chromatic Walk",
+    genreFamilies: ["utility"],
+    steps: [0, 1, 2, 3],
+    roman: ["I", "bII", "II", "bIII"],
+    vibe: "Step through the chromatic set. Hear what you have.",
+  },
 ];

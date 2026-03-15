@@ -13,6 +13,7 @@ import ChordSetDetail from './components/ChordSetDetail';
 import { RandomButton } from './components/RandomButton';
 import FavoritesList from './components/FavoritesList';
 import StyleGuideTab from './components/StyleGuideTab';
+import Toast from './components/Toast';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -74,6 +75,7 @@ function App() {
       />
 
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
+      <Toast />
     </div>
   );
 }
