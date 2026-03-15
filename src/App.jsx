@@ -3,6 +3,7 @@ import { useTheme } from './hooks/useTheme';
 import { useSearch } from './hooks/useSearch';
 import { useFavorites } from './hooks/useFavorites';
 import { useAudio } from './hooks/useAudio';
+import { useSettings } from './hooks/useSettings';
 import Header from './components/Header';
 import TabBar from './components/TabBar';
 import SearchBar from './components/SearchBar';
@@ -21,6 +22,7 @@ function App() {
   const { searchQuery, setSearchQuery, activeGenre, setActiveGenre, filteredSets } = useSearch();
   const { favorites, toggleFavorite, isFavorite } = useFavorites();
   const { playChord, playLoop, stopLoop, isLooping, isMuted, toggleMute } = useAudio();
+  const { theoryMode, toggleTheoryMode } = useSettings();
 
   return (
     <div className="app-shell">
@@ -67,6 +69,8 @@ function App() {
         isLooping={isLooping}
         isMuted={isMuted}
         toggleMute={toggleMute}
+        theoryMode={theoryMode}
+        toggleTheoryMode={toggleTheoryMode}
       />
 
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />

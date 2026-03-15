@@ -75,6 +75,16 @@
   background: var(--border);
 }
 
+.detail-action-btn--active {
+  background: #ff6b00;
+  border-color: #ff6b00;
+  color: #fff;
+}
+
+.detail-action-btn--active:active {
+  background: #e05e00;
+}
+
 .detail-section {
   padding: 16px;
   border-top: 1px solid var(--border);

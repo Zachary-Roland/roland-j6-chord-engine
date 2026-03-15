@@ -1,0 +1,32 @@
+.theory-mode {
+  padding: 16px;
+}
+
+.theory-mode-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-sub);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.theory-scale-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.theory-scale-name {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.theory-scale-tip {
+  font-size: 12px;
+  color: var(--text-sub);
+}

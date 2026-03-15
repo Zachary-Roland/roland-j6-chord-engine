@@ -4,6 +4,7 @@ import ChordPanel from './ChordPanel';
 import ProgressionList from './ProgressionList';
 import Scratchpad from './Scratchpad';
 import SimilarSets from './SimilarSets';
+import TheoryMode from './TheoryMode';
 import { useScratchpad } from '../hooks/useScratchpad';
 import { getGenreColor } from '../data/genreConfig';
 import './ChordSetDetail.css';
@@ -20,6 +21,8 @@ export default function ChordSetDetail({
   isLooping,
   isMuted,
   toggleMute,
+  theoryMode,
+  toggleTheoryMode,
 }) {
   const [selectedKey, setSelectedKey] = useState('C');
   const scratchpad = useScratchpad(set?.id ?? 0);
@@ -96,6 +99,14 @@ export default function ChordSetDetail({
               {isMuted ? '🔇' : '🔊'}
             </button>
             <button
+              className={`detail-action-btn${theoryMode ? ' detail-action-btn--active' : ''}`}
+              onClick={toggleTheoryMode}
+              aria-label={theoryMode ? 'Disable Theory Mode' : 'Enable Theory Mode'}
+              title="Theory Mode"
+            >
+              ♩
+            </button>
+            <button
               className="detail-action-btn"
               onClick={onClose}
               aria-label="Close"
@@ -156,6 +167,17 @@ export default function ChordSetDetail({
         <div className="detail-section">
           <SimilarSets currentSet={set} onSelectSet={handleSelectSimilar} />
         </div>
+
+        {/* Theory Mode */}
+        {theoryMode && set.chords[selectedKey] && (
+          <div className="detail-section">
+            <div className="detail-section-title">Theory Mode</div>
+            <TheoryMode
+              chordName={set.chords[selectedKey].name}
+              keyName={selectedKey}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
