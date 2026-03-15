@@ -1,14 +1,14 @@
 export const genreFamilies = [
-  { slug: "pop",       label: "Pop",       color: "#4A90D9" },
-  { slug: "jazz",      label: "Jazz",      color: "#D4A03E" },
-  { slug: "blues",     label: "Blues",      color: "#7B68AE" },
-  { slug: "cinematic", label: "Cinematic",  color: "#5EAAA8" },
-  { slug: "synthwave", label: "Synthwave",  color: "#E84893" },
-  { slug: "house",     label: "House",      color: "#44BBA4" },
-  { slug: "soul-rnb",  label: "Soul/R&B",   color: "#E8A045" },
-  { slug: "funk",      label: "Funk",       color: "#D94E4E" },
-  { slug: "classical", label: "Classical",  color: "#8B7D6B" },
-  { slug: "utility",   label: "Utility",    color: "#888888" },
+  { slug: "pop",       label: "Pop",       color: "#E85D3A" },
+  { slug: "jazz",      label: "Jazz",      color: "#C47A2A" },
+  { slug: "blues",     label: "Blues",      color: "#8B5CF6" },
+  { slug: "cinematic", label: "Cinematic",  color: "#2AABB3" },
+  { slug: "synthwave", label: "Synthwave",  color: "#D946A8" },
+  { slug: "house",     label: "House",      color: "#22A869" },
+  { slug: "soul-rnb",  label: "Soul/R&B",   color: "#E0782A" },
+  { slug: "funk",      label: "Funk",       color: "#DC2E4E" },
+  { slug: "classical", label: "Classical",  color: "#7A6B5A" },
+  { slug: "utility",   label: "Utility",    color: "#5A5A5A" },
 ];
 
 export const genreToFamily = {
