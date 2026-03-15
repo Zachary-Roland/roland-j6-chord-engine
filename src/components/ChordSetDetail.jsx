@@ -2,6 +2,8 @@ import { useState } from 'react';
 import KeyGrid from './KeyGrid';
 import ChordPanel from './ChordPanel';
 import ProgressionList from './ProgressionList';
+import Scratchpad from './Scratchpad';
+import { useScratchpad } from '../hooks/useScratchpad';
 import { getGenreColor } from '../data/genreConfig';
 import './ChordSetDetail.css';
 
@@ -18,6 +20,7 @@ export default function ChordSetDetail({
   toggleMute,
 }) {
   const [selectedKey, setSelectedKey] = useState('C');
+  const scratchpad = useScratchpad(set?.id ?? 0);
 
   if (!set) return null;
 
@@ -29,6 +32,25 @@ export default function ChordSetDetail({
     if (chord?.notes) {
       playChord(chord.notes);
     }
+    scratchpad.addStep(key);
+  };
+
+  const handlePlayScratchpad = () => {
+    const chordSequence = scratchpad.steps
+      .map(keyName => set.chords[keyName])
+      .filter(c => c?.notes);
+    if (chordSequence.length > 0) {
+      playLoop(chordSequence, scratchpad.bpm);
+    }
+  };
+
+  const handleStopScratchpad = () => {
+    stopLoop();
+  };
+
+  const handleClearScratchpad = () => {
+    if (isLooping) stopLoop();
+    scratchpad.clearSteps();
   };
 
   const handleOverlayClick = (e) => {
@@ -106,10 +128,21 @@ export default function ChordSetDetail({
           />
         </div>
 
-        {/* Placeholder: Scratchpad */}
+        {/* Scratchpad */}
         <div className="detail-section">
           <div className="detail-section-title">Scratchpad</div>
-          <p style={{ color: 'var(--text-sub)', fontSize: 14 }}>Coming soon</p>
+          <Scratchpad
+            set={set}
+            steps={scratchpad.steps}
+            bpm={scratchpad.bpm}
+            onRemoveStep={scratchpad.removeStep}
+            onClear={handleClearScratchpad}
+            onAdjustBpm={scratchpad.adjustBpm}
+            onPlay={handlePlayScratchpad}
+            onStop={handleStopScratchpad}
+            isPlaying={isLooping}
+            genreColor={genreColor}
+          />
         </div>
       </div>
     </div>
