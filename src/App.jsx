@@ -13,6 +13,7 @@ import ChordSetDetail from './components/ChordSetDetail';
 import { RandomButton } from './components/RandomButton';
 import FavoritesList from './components/FavoritesList';
 import StyleGuideTab from './components/StyleGuideTab';
+import SettingsPage from './components/SettingsPage';
 import Toast from './components/Toast';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
   const { searchQuery, setSearchQuery, activeGenre, setActiveGenre, filteredSets } = useSearch();
   const { favorites, toggleFavorite, isFavorite } = useFavorites();
   const { playChord, playLoop, stopLoop, isLooping, isMuted, toggleMute, playMode, togglePlayMode } = useAudio();
-  // useSettings kept for future preferences; theoryMode now always on
+  const { scratchpadMode, setScratchpadMode, defaultPlayMode, setDefaultPlayMode } = useSettings();
 
   return (
     <div className="app-shell">
@@ -52,6 +53,16 @@ function App() {
             viewMode={viewMode}
           />
         )}
+        {activeTab === 'settings' && (
+          <SettingsPage
+            theme={theme}
+            toggleTheme={toggleTheme}
+            scratchpadMode={scratchpadMode}
+            setScratchpadMode={setScratchpadMode}
+            defaultPlayMode={defaultPlayMode}
+            setDefaultPlayMode={setDefaultPlayMode}
+          />
+        )}
       </main>
 
       {activeTab === 'browse' && (
@@ -72,6 +83,7 @@ function App() {
         toggleMute={toggleMute}
         playMode={playMode}
         togglePlayMode={togglePlayMode}
+        scratchpadMode={scratchpadMode}
       />
 
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />

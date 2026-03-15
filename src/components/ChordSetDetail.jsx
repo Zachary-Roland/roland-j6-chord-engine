@@ -24,9 +24,11 @@ export default function ChordSetDetail({
   toggleMute,
   playMode,
   togglePlayMode,
+  scratchpadMode = 'per-set',
 }) {
   const [selectedKey, setSelectedKey] = useState('C');
-  const scratchpad = useScratchpad(set?.id ?? 0);
+  const scratchpadId = scratchpadMode === 'global' ? 'global' : (set?.id ?? 0);
+  const scratchpad = useScratchpad(scratchpadId);
 
   if (!set) return null;
 
