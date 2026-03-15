@@ -10,6 +10,7 @@ import GenreFilter from './components/GenreFilter';
 import BrowseGrid from './components/BrowseGrid';
 import ChordSetDetail from './components/ChordSetDetail';
 import { RandomButton } from './components/RandomButton';
+import FavoritesList from './components/FavoritesList';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -39,7 +40,14 @@ function App() {
           </>
         )}
         {activeTab === 'styles' && <div style={{ padding: '1rem' }}><p>Styles tab coming soon</p></div>}
-        {activeTab === 'favorites' && <div style={{ padding: '1rem' }}><p>Favorites tab coming soon</p></div>}
+        {activeTab === 'favorites' && (
+          <FavoritesList
+            favorites={favorites}
+            onToggleFavorite={toggleFavorite}
+            onSelectSet={setSelectedSet}
+            viewMode={viewMode}
+          />
+        )}
       </main>
 
       {activeTab === 'browse' && (

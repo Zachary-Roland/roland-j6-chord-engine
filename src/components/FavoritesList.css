@@ -1,0 +1,37 @@
+.favorites-tab {
+  padding: 16px;
+}
+
+.favorites-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.favorites-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.favorites-count {
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.favorites-copy-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-pri);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.favorites-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-sub);
+  font-size: 15px;
+}
