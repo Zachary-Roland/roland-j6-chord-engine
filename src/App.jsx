@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { useTheme } from './hooks/useTheme';
 import { useSearch } from './hooks/useSearch';
 import { useFavorites } from './hooks/useFavorites';
+import { useAudio } from './hooks/useAudio';
 import Header from './components/Header';
 import TabBar from './components/TabBar';
 import SearchBar from './components/SearchBar';
 import GenreFilter from './components/GenreFilter';
 import BrowseGrid from './components/BrowseGrid';
+import ChordSetDetail from './components/ChordSetDetail';
 import { RandomButton } from './components/RandomButton';
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
   const [selectedSet, setSelectedSet] = useState(null);
   const { searchQuery, setSearchQuery, activeGenre, setActiveGenre, filteredSets } = useSearch();
   const { favorites, toggleFavorite, isFavorite } = useFavorites();
+  const { playChord, isMuted, toggleMute } = useAudio();
 
   return (
     <div className="app-shell">
@@ -42,6 +45,16 @@ function App() {
       {activeTab === 'browse' && (
         <RandomButton filteredSets={filteredSets} onSelectSet={setSelectedSet} />
       )}
+
+      <ChordSetDetail
+        set={selectedSet}
+        isFavorite={selectedSet ? isFavorite(selectedSet.id) : false}
+        onToggleFavorite={toggleFavorite}
+        onClose={() => setSelectedSet(null)}
+        playChord={playChord}
+        isMuted={isMuted}
+        toggleMute={toggleMute}
+      />
 
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
     </div>
