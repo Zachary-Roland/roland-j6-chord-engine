@@ -22,7 +22,7 @@ function App() {
   const [selectedSet, setSelectedSet] = useState(null);
   const { searchQuery, setSearchQuery, activeGenre, setActiveGenre, filteredSets } = useSearch();
   const { favorites, toggleFavorite, isFavorite } = useFavorites();
-  const { playChord, playLoop, stopLoop, isLooping, isMuted, toggleMute } = useAudio();
+  const { playChord, playLoop, stopLoop, isLooping, isMuted, toggleMute, playMode, togglePlayMode } = useAudio();
   const { theoryMode, toggleTheoryMode } = useSettings();
 
   return (
@@ -70,6 +70,8 @@ function App() {
         isLooping={isLooping}
         isMuted={isMuted}
         toggleMute={toggleMute}
+        playMode={playMode}
+        togglePlayMode={togglePlayMode}
         theoryMode={theoryMode}
         toggleTheoryMode={toggleTheoryMode}
       />

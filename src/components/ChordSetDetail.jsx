@@ -22,6 +22,8 @@ export default function ChordSetDetail({
   isLooping,
   isMuted,
   toggleMute,
+  playMode,
+  togglePlayMode,
   theoryMode,
   toggleTheoryMode,
 }) {
@@ -110,8 +112,24 @@ export default function ChordSetDetail({
               className="detail-action-btn"
               onClick={toggleMute}
               aria-label={isMuted ? 'Unmute' : 'Mute'}
+              title={isMuted ? 'Unmute' : 'Mute'}
             >
-              {isMuted ? '🔇' : '🔊'}
+              {isMuted ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              )}
+            </button>
+            <button
+              className={`detail-action-btn${playMode === 'arp' ? ' detail-action-btn--active' : ''}`}
+              onClick={() => {
+                togglePlayMode();
+                toast(playMode === 'chord' ? 'Arpeggio mode' : 'Chord mode');
+              }}
+              aria-label={playMode === 'chord' ? 'Switch to arpeggio' : 'Switch to chord'}
+              title={playMode === 'chord' ? 'Arpeggio mode' : 'Chord mode'}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M2 20h2v-4h2v-4h2v-4h2V4h2v4h2v4h2v4h2v4h2"/></svg>
             </button>
             <button
               className={`detail-action-btn${theoryMode ? ' detail-action-btn--active' : ''}`}
