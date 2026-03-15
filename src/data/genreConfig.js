@@ -1,11 +1,11 @@
 export const genreFamilies = [
   { slug: "pop",       label: "Pop",       color: "#E85D3A" },
   { slug: "jazz",      label: "Jazz",      color: "#D4A017" },
-  { slug: "blues",     label: "Blues",      color: "#8B5CF6" },
+  { slug: "blues",     label: "Blues",      color: "#4E7FE8" },
   { slug: "cinematic", label: "Cinematic",  color: "#2AABB3" },
   { slug: "synthwave", label: "Synthwave",  color: "#D946A8" },
   { slug: "house",     label: "House",      color: "#22A869" },
-  { slug: "soul-rnb",  label: "Soul/R&B",   color: "#C74375" },
+  { slug: "soul-rnb",  label: "Soul/R&B",   color: "#8B5CF6" },
   { slug: "funk",      label: "Funk",       color: "#DC2E4E" },
   { slug: "classical", label: "Classical",  color: "#7A6B5A" },
   { slug: "utility",   label: "Utility",    color: "#5A5A5A" },
