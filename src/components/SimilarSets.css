@@ -1,0 +1,56 @@
+.similar-sets {
+  padding: 16px;
+}
+
+.similar-sets-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-sub);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.similar-sets-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+}
+
+.similar-set-card {
+  flex-shrink: 0;
+  width: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  color: white;
+}
+
+.similar-set-card:active {
+  opacity: 0.8;
+}
+
+.similar-set-number {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.similar-set-genre {
+  font-size: 10px;
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+.similar-set-chord {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}

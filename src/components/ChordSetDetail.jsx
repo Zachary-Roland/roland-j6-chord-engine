@@ -3,6 +3,7 @@ import KeyGrid from './KeyGrid';
 import ChordPanel from './ChordPanel';
 import ProgressionList from './ProgressionList';
 import Scratchpad from './Scratchpad';
+import SimilarSets from './SimilarSets';
 import { useScratchpad } from '../hooks/useScratchpad';
 import { getGenreColor } from '../data/genreConfig';
 import './ChordSetDetail.css';
@@ -12,6 +13,7 @@ export default function ChordSetDetail({
   isFavorite,
   onToggleFavorite,
   onClose,
+  onSelectSet,
   playChord,
   playLoop,
   stopLoop,
@@ -57,6 +59,11 @@ export default function ChordSetDetail({
     if (e.target === e.currentTarget) {
       onClose();
     }
+  };
+
+  const handleSelectSimilar = (similarSet) => {
+    onClose();
+    if (onSelectSet) onSelectSet(similarSet);
   };
 
   return (
@@ -143,6 +150,11 @@ export default function ChordSetDetail({
             isPlaying={isLooping}
             genreColor={genreColor}
           />
+        </div>
+
+        {/* Similar Sets */}
+        <div className="detail-section">
+          <SimilarSets currentSet={set} onSelectSet={handleSelectSimilar} />
         </div>
       </div>
     </div>

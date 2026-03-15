@@ -60,6 +60,7 @@ function App() {
         isFavorite={selectedSet ? isFavorite(selectedSet.id) : false}
         onToggleFavorite={toggleFavorite}
         onClose={() => setSelectedSet(null)}
+        onSelectSet={setSelectedSet}
         playChord={playChord}
         playLoop={playLoop}
         stopLoop={stopLoop}
