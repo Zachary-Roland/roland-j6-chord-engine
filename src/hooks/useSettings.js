@@ -14,28 +14,37 @@ function saveSetting(key, value) {
 }
 
 export function useSettings() {
-  // Scratchpad mode: 'per-set' = separate scratchpad per chord set, 'global' = one shared scratchpad
   const [scratchpadMode, setScratchpadMode] = useState(() =>
     loadSetting('j6_scratchpad_mode', 'per-set')
   );
 
-  // Default playback mode: 'chord' or 'arp'
   const [defaultPlayMode, setDefaultPlayMode] = useState(() =>
     loadSetting('j6_default_play_mode', 'chord')
   );
 
-  useEffect(() => {
-    saveSetting('j6_scratchpad_mode', scratchpadMode);
-  }, [scratchpadMode]);
+  const [defaultBpm, setDefaultBpm] = useState(() =>
+    loadSetting('j6_default_bpm', 90)
+  );
 
-  useEffect(() => {
-    saveSetting('j6_default_play_mode', defaultPlayMode);
-  }, [defaultPlayMode]);
+  const [autoPlayOnTap, setAutoPlayOnTap] = useState(() =>
+    loadSetting('j6_auto_play_on_tap', true)
+  );
+
+  const [scratchpadAutoAdd, setScratchpadAutoAdd] = useState(() =>
+    loadSetting('j6_scratchpad_auto_add', true)
+  );
+
+  useEffect(() => { saveSetting('j6_scratchpad_mode', scratchpadMode); }, [scratchpadMode]);
+  useEffect(() => { saveSetting('j6_default_play_mode', defaultPlayMode); }, [defaultPlayMode]);
+  useEffect(() => { saveSetting('j6_default_bpm', defaultBpm); }, [defaultBpm]);
+  useEffect(() => { saveSetting('j6_auto_play_on_tap', autoPlayOnTap); }, [autoPlayOnTap]);
+  useEffect(() => { saveSetting('j6_scratchpad_auto_add', scratchpadAutoAdd); }, [scratchpadAutoAdd]);
 
   return {
-    scratchpadMode,
-    setScratchpadMode,
-    defaultPlayMode,
-    setDefaultPlayMode,
+    scratchpadMode, setScratchpadMode,
+    defaultPlayMode, setDefaultPlayMode,
+    defaultBpm, setDefaultBpm,
+    autoPlayOnTap, setAutoPlayOnTap,
+    scratchpadAutoAdd, setScratchpadAutoAdd,
   };
 }

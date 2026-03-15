@@ -24,7 +24,13 @@ function App() {
   const { searchQuery, setSearchQuery, activeGenre, setActiveGenre, filteredSets } = useSearch();
   const { favorites, toggleFavorite, isFavorite } = useFavorites();
   const { playChord, playLoop, stopLoop, isLooping, isMuted, toggleMute, playMode, togglePlayMode } = useAudio();
-  const { scratchpadMode, setScratchpadMode, defaultPlayMode, setDefaultPlayMode } = useSettings();
+  const {
+    scratchpadMode, setScratchpadMode,
+    defaultPlayMode, setDefaultPlayMode,
+    defaultBpm, setDefaultBpm,
+    autoPlayOnTap, setAutoPlayOnTap,
+    scratchpadAutoAdd, setScratchpadAutoAdd,
+  } = useSettings();
 
   return (
     <div className="app-shell">
@@ -61,6 +67,12 @@ function App() {
             setScratchpadMode={setScratchpadMode}
             defaultPlayMode={defaultPlayMode}
             setDefaultPlayMode={setDefaultPlayMode}
+            defaultBpm={defaultBpm}
+            setDefaultBpm={setDefaultBpm}
+            autoPlayOnTap={autoPlayOnTap}
+            setAutoPlayOnTap={setAutoPlayOnTap}
+            scratchpadAutoAdd={scratchpadAutoAdd}
+            setScratchpadAutoAdd={setScratchpadAutoAdd}
           />
         )}
       </main>
@@ -84,6 +96,9 @@ function App() {
         playMode={playMode}
         togglePlayMode={togglePlayMode}
         scratchpadMode={scratchpadMode}
+        autoPlayOnTap={autoPlayOnTap}
+        scratchpadAutoAdd={scratchpadAutoAdd}
+        defaultBpm={defaultBpm}
       />
 
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />

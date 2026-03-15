@@ -7,6 +7,12 @@ export default function SettingsPage({
   setScratchpadMode,
   defaultPlayMode,
   setDefaultPlayMode,
+  defaultBpm,
+  setDefaultBpm,
+  autoPlayOnTap,
+  setAutoPlayOnTap,
+  scratchpadAutoAdd,
+  setScratchpadAutoAdd,
 }) {
   return (
     <div className="settings-page">
@@ -60,6 +66,51 @@ export default function SettingsPage({
             </button>
           </div>
         </div>
+
+        <div className="settings-row">
+          <div className="settings-row-label">
+            <span className="settings-row-name">Default BPM</span>
+            <span className="settings-row-desc">Starting tempo for loop playback</span>
+          </div>
+          <div className="settings-bpm-control">
+            <button
+              className="settings-bpm-btn"
+              onClick={() => setDefaultBpm(Math.max(40, defaultBpm - 5))}
+              aria-label="Decrease BPM"
+            >
+              &minus;
+            </button>
+            <span className="settings-bpm-value">{defaultBpm}</span>
+            <button
+              className="settings-bpm-btn"
+              onClick={() => setDefaultBpm(Math.min(200, defaultBpm + 5))}
+              aria-label="Increase BPM"
+            >
+              +
+            </button>
+          </div>
+        </div>
+
+        <div className="settings-row">
+          <div className="settings-row-label">
+            <span className="settings-row-name">Auto-play on tap</span>
+            <span className="settings-row-desc">Play chord audio when tapping a key on the keyboard</span>
+          </div>
+          <div className="settings-toggle-group">
+            <button
+              className={`settings-toggle-btn${autoPlayOnTap ? ' settings-toggle-btn--active' : ''}`}
+              onClick={() => setAutoPlayOnTap(true)}
+            >
+              On
+            </button>
+            <button
+              className={`settings-toggle-btn${!autoPlayOnTap ? ' settings-toggle-btn--active' : ''}`}
+              onClick={() => setAutoPlayOnTap(false)}
+            >
+              Off
+            </button>
+          </div>
+        </div>
       </div>
 
       <div className="settings-section">
@@ -86,6 +137,31 @@ export default function SettingsPage({
               onClick={() => setScratchpadMode('global')}
             >
               Global
+            </button>
+          </div>
+        </div>
+
+        <div className="settings-row">
+          <div className="settings-row-label">
+            <span className="settings-row-name">Auto-add to scratchpad</span>
+            <span className="settings-row-desc">
+              {scratchpadAutoAdd
+                ? 'Every key tap adds a step to the scratchpad'
+                : 'Key taps only preview — add steps manually'}
+            </span>
+          </div>
+          <div className="settings-toggle-group">
+            <button
+              className={`settings-toggle-btn${scratchpadAutoAdd ? ' settings-toggle-btn--active' : ''}`}
+              onClick={() => setScratchpadAutoAdd(true)}
+            >
+              On
+            </button>
+            <button
+              className={`settings-toggle-btn${!scratchpadAutoAdd ? ' settings-toggle-btn--active' : ''}`}
+              onClick={() => setScratchpadAutoAdd(false)}
+            >
+              Off
             </button>
           </div>
         </div>

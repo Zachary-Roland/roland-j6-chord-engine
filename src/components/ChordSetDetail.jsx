@@ -25,10 +25,13 @@ export default function ChordSetDetail({
   playMode,
   togglePlayMode,
   scratchpadMode = 'per-set',
+  autoPlayOnTap = true,
+  scratchpadAutoAdd = true,
+  defaultBpm = 90,
 }) {
   const [selectedKey, setSelectedKey] = useState('C');
   const scratchpadId = scratchpadMode === 'global' ? 'global' : (set?.id ?? 0);
-  const scratchpad = useScratchpad(scratchpadId);
+  const scratchpad = useScratchpad(scratchpadId, defaultBpm);
   const modalRef = useRef(null);
 
   // Focus trap: keep focus inside modal while open
@@ -80,10 +83,12 @@ export default function ChordSetDetail({
   const handleKeyPress = (key) => {
     setSelectedKey(key);
     const chord = set.chords[key];
-    if (chord?.notes) {
+    if (autoPlayOnTap && chord?.notes) {
       playChord(chord.notes);
     }
-    scratchpad.addStep(key);
+    if (scratchpadAutoAdd) {
+      scratchpad.addStep(key);
+    }
   };
 
   const handlePlayScratchpad = () => {

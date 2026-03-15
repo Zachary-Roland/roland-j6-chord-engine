@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 
-export function useScratchpad(setId) {
+export function useScratchpad(setId, initialBpm = 90) {
   const storageKey = `j6_scratchpad_${setId}`;
 
   const [steps, setSteps] = useState(() => {
@@ -12,7 +12,7 @@ export function useScratchpad(setId) {
     }
   });
 
-  const [bpm, setBpm] = useState(90);
+  const [bpm, setBpm] = useState(initialBpm);
 
   // Reload steps when setId changes
   useEffect(() => {
