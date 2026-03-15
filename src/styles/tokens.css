@@ -13,7 +13,7 @@
   --surface: var(--dark-surface);
   --border: var(--dark-border);
   --text-pri: #F0F0F0;
-  --text-sub: #888888;
+  --text-sub: #A0A0A0;
 }
 
 [data-theme="light"] {

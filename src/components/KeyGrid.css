@@ -47,7 +47,12 @@
 .key-grid-key.selected {
   background: var(--orange) !important;
   border-color: var(--orange);
-  color: white;
+  color: #111111;
+}
+
+.key-grid-key:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
 }
 
 .key-grid-key:active {
@@ -67,8 +72,31 @@
   margin-bottom: 2px;
 }
 
+/* Black key labels need a lighter color in dark mode (#2A2A2A bg) to meet 4.5:1 */
+[data-theme="dark"] .key-grid-key.black .key-label {
+  color: #BBBBBB;
+}
+
+/* Black key chord names also need sufficient contrast on #2A2A2A */
+[data-theme="dark"] .key-grid-key.black .key-chord-name {
+  color: #DDDDDD;
+}
+
+/* Light mode: black keys are #D0D0D0 — use dark text for contrast */
+[data-theme="light"] .key-grid-key.black .key-label {
+  color: #444444;
+}
+
+[data-theme="light"] .key-grid-key.black .key-chord-name {
+  color: #222222;
+}
+
 .key-grid-key.selected .key-label {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.key-grid-key.selected .key-chord-name {
+  color: #111111;
 }
 
 .key-chord-name {

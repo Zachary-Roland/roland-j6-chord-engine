@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import KeyGrid from './KeyGrid';
 import ChordPanel from './ChordPanel';
 import ProgressionList from './ProgressionList';
@@ -29,6 +29,49 @@ export default function ChordSetDetail({
   const [selectedKey, setSelectedKey] = useState('C');
   const scratchpadId = scratchpadMode === 'global' ? 'global' : (set?.id ?? 0);
   const scratchpad = useScratchpad(scratchpadId);
+  const modalRef = useRef(null);
+
+  // Focus trap: keep focus inside modal while open
+  useEffect(() => {
+    const modal = modalRef.current;
+    if (!modal) return;
+
+    const focusableSelectors = [
+      'a[href]', 'button:not([disabled])', 'input:not([disabled])',
+      'select:not([disabled])', 'textarea:not([disabled])',
+      '[tabindex]:not([tabindex="-1"])',
+    ].join(', ');
+
+    // Focus the modal itself on mount
+    modal.focus();
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleClose();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const focusable = Array.from(modal.querySelectorAll(focusableSelectors));
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    modal.addEventListener('keydown', handleKeyDown);
+    return () => modal.removeEventListener('keydown', handleKeyDown);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [set]);
 
   if (!set) return null;
 
@@ -84,8 +127,20 @@ export default function ChordSetDetail({
   };
 
   return (
-    <div className="detail-overlay" onClick={handleOverlayClick}>
-      <div className="detail-modal">
+    <div
+      className="detail-overlay"
+      onClick={handleOverlayClick}
+      role="presentation"
+      aria-hidden="false"
+    >
+      <div
+        className="detail-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label={`Chord Set ${set.id} — ${set.genre}`}
+        ref={modalRef}
+        tabIndex={-1}
+      >
         {/* Header */}
         <div className="detail-header">
           <div className="detail-header-left">

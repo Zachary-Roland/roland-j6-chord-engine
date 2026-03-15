@@ -85,6 +85,11 @@
   opacity: 0.8;
 }
 
+.progression-btn:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
 .progression-btn--playing {
   background: var(--orange);
   color: white;

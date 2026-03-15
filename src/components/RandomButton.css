@@ -20,3 +20,8 @@
 .random-btn:active {
   transform: scale(0.95);
 }
+
+.random-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}

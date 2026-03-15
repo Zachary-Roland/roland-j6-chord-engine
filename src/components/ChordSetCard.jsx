@@ -1,6 +1,14 @@
 import { getGenreColor } from '../data/genreConfig';
 import './ChordSetCard.css';
 
+function needsDarkText(hexColor) {
+  const r = parseInt(hexColor.slice(1, 3), 16);
+  const g = parseInt(hexColor.slice(3, 5), 16);
+  const b = parseInt(hexColor.slice(5, 7), 16);
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  return luminance > 0.5;
+}
+
 const HeartIcon = ({ filled }) => (
   <svg
     className={`heart-icon${filled ? ' heart-icon--filled' : ''}`}
@@ -18,6 +26,20 @@ const HeartIcon = ({ filled }) => (
 
 export default function ChordSetCard({ set, viewMode, isFavorite, onToggleFavorite, onSelect }) {
   const color = getGenreColor(set.genre);
+  const darkText = needsDarkText(color);
+  const textColor = darkText ? '#111111' : '#ffffff';
+  const textColorSub = darkText ? 'rgba(0,0,0,0.65)' : 'rgba(255,255,255,0.75)';
+  const textColorStrong = darkText ? 'rgba(0,0,0,0.85)' : 'rgba(255,255,255,0.9)';
+  const pillBg = darkText ? 'rgba(0,0,0,0.15)' : 'rgba(0,0,0,0.2)';
+  const pillColor = darkText ? 'rgba(0,0,0,0.75)' : 'rgba(255,255,255,0.9)';
+  const cardStyle = {
+    backgroundColor: color,
+    '--card-text': textColor,
+    '--card-text-sub': textColorSub,
+    '--card-text-strong': textColorStrong,
+    '--card-pill-bg': pillBg,
+    '--card-pill-color': pillColor,
+  };
   const cChord = set.chords['C']?.name ?? '—';
   const gChord = set.chords['G']?.name ?? '—';
 
@@ -30,7 +52,7 @@ export default function ChordSetCard({ set, viewMode, isFavorite, onToggleFavori
     return (
       <div
         className="chord-set-card chord-set-card--list"
-        style={{ backgroundColor: color }}
+        style={cardStyle}
         onClick={() => onSelect(set)}
         role="button"
         tabIndex={0}
@@ -59,7 +81,7 @@ export default function ChordSetCard({ set, viewMode, isFavorite, onToggleFavori
   return (
     <div
       className="chord-set-card chord-set-card--grid"
-      style={{ backgroundColor: color }}
+      style={cardStyle}
       onClick={() => onSelect(set)}
       role="button"
       tabIndex={0}

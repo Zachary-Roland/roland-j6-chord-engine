@@ -3,6 +3,14 @@ import { chordSets } from '../data/chordSets';
 import { getGenreColor } from '../data/genreConfig';
 import './SimilarSets.css';
 
+function needsDarkText(hexColor) {
+  const r = parseInt(hexColor.slice(1, 3), 16);
+  const g = parseInt(hexColor.slice(3, 5), 16);
+  const b = parseInt(hexColor.slice(5, 7), 16);
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  return luminance > 0.5;
+}
+
 const getSimilarSets = (currentSet) => {
   const sameFamily = chordSets.filter(
     s => s.genreFamily === currentSet.genreFamily && s.id !== currentSet.id
@@ -38,12 +46,18 @@ export default function SimilarSets({ currentSet, onSelectSet }) {
       <div className="similar-sets-row">
         {similarSets.map(s => {
           const color = getGenreColor(s.genre);
+          const dark = needsDarkText(color);
           const cChord = s.chords['C']?.name ?? '—';
           return (
             <button
               key={s.id}
               className="similar-set-card"
-              style={{ backgroundColor: color }}
+              style={{
+                backgroundColor: color,
+                '--card-text': dark ? '#111111' : '#ffffff',
+                '--card-text-sub': dark ? 'rgba(0,0,0,0.65)' : 'rgba(255,255,255,0.75)',
+                '--card-text-strong': dark ? 'rgba(0,0,0,0.85)' : 'rgba(255,255,255,0.9)',
+              }}
               onClick={() => onSelectSet(s)}
               aria-label={`Open chord set ${s.id}, ${s.genre}`}
             >

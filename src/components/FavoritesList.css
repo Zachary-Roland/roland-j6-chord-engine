@@ -29,6 +29,11 @@
   cursor: pointer;
 }
 
+.favorites-copy-btn:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
 .favorites-empty {
   text-align: center;
   padding: 60px 20px;

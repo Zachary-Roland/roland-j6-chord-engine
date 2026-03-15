@@ -61,8 +61,8 @@
   background: none;
   border: 1px solid var(--border);
   border-radius: 8px;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,6 +73,11 @@
 
 .detail-action-btn:active {
   background: var(--border);
+}
+
+.detail-action-btn:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
 }
 
 .detail-action-btn--active {
