@@ -33,6 +33,24 @@
 .key-grid-key.white {
   background: var(--surface);
   max-width: calc((100% - 24px) / 7); /* 7 white keys */
+  color: var(--text-pri);
+}
+
+/* Ensure white key chord names are clearly readable */
+[data-theme="dark"] .key-grid-key.white .key-chord-name {
+  color: #F0F0F0;
+}
+
+[data-theme="dark"] .key-grid-key.white .key-label {
+  color: #BBBBBB;
+}
+
+[data-theme="light"] .key-grid-key.white .key-chord-name {
+  color: #111111;
+}
+
+[data-theme="light"] .key-grid-key.white .key-label {
+  color: #555555;
 }
 
 .key-grid-key.black {
