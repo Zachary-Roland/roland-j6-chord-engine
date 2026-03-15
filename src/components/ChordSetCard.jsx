@@ -30,23 +30,17 @@ export default function ChordSetCard({ set, viewMode, isFavorite, onToggleFavori
     return (
       <div
         className="chord-set-card chord-set-card--list"
-        style={{ borderLeftColor: color }}
+        style={{ backgroundColor: color }}
         onClick={() => onSelect(set)}
         role="button"
         tabIndex={0}
         onKeyDown={(e) => e.key === 'Enter' && onSelect(set)}
         aria-label={`Chord Set ${set.id}, ${set.genre}`}
       >
-        <span className="card-set-number card-set-number--list" style={{ color }}>
+        <span className="card-set-number card-set-number--list">
           {String(set.id).padStart(2, '0')}
         </span>
-        <span
-          className="card-genre-pill"
-          style={{
-            backgroundColor: `${color}26`,
-            color,
-          }}
-        >
+        <span className="card-genre-pill">
           {set.genre}
         </span>
         <span className="card-chord-preview card-chord-preview--c">{cChord}</span>
@@ -65,7 +59,7 @@ export default function ChordSetCard({ set, viewMode, isFavorite, onToggleFavori
   return (
     <div
       className="chord-set-card chord-set-card--grid"
-      style={{ borderLeftColor: color }}
+      style={{ backgroundColor: color }}
       onClick={() => onSelect(set)}
       role="button"
       tabIndex={0}
@@ -73,7 +67,7 @@ export default function ChordSetCard({ set, viewMode, isFavorite, onToggleFavori
       aria-label={`Chord Set ${set.id}, ${set.genre}`}
     >
       <div className="card-top-row">
-        <span className="card-set-number" style={{ color }}>
+        <span className="card-set-number">
           {String(set.id).padStart(2, '0')}
         </span>
         <button
@@ -86,13 +80,7 @@ export default function ChordSetCard({ set, viewMode, isFavorite, onToggleFavori
       </div>
       <div className="card-c-chord">{cChord}</div>
       <div className="card-bottom-row">
-        <span
-          className="card-genre-pill"
-          style={{
-            backgroundColor: `${color}26`,
-            color,
-          }}
-        >
+        <span className="card-genre-pill">
           {set.genre}
         </span>
       </div>
