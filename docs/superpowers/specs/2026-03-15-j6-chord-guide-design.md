@@ -11,11 +11,11 @@ A mobile-first React PWA that serves as an active session companion for the Rola
 ## Decisions
 
 | Decision | Choice | Rationale |
-|----------|--------|-----------|
+|----|----|----|
 | Framework | Vite + React, custom CSS | Specific visual identity (Roland orange, IBM Plex Mono) easier with custom CSS than fighting a framework |
 | State management | React hooks + context | App state is simple: favorites, theme, settings — no need for Redux |
 | Audio | Triangle wave OscillatorNode | Companion tool, not standalone instrument. J-6 provides the real sound |
-| Genre taxonomy | Two-tier | Broad families (~10) for filter pills, granular labels on cards |
+| Genre taxonomy | Two-tier | Broad families (\~10) for filter pills, granular labels on cards |
 | Navigation | 3-tab bottom bar + slide-up modal | Browse, Styles, Favorites tabs. Detail view as modal overlay |
 | Hosting | Firebase Hosting | Existing workflow. PWA-ready. Capacitor-ready for future iOS App Store |
 | Data | Static JS modules | All 100 sets with voicings scraped from Roland manual. No backend needed |
@@ -24,13 +24,13 @@ A mobile-first React PWA that serves as an active session companion for the Rola
 
 ### Tech Stack
 
-- **Build:** Vite + React 18
-- **Styling:** CSS custom properties (tokens.css) + component CSS modules
-- **Fonts:** Outfit (UI), IBM Plex Mono (chord names, data)
-- **Audio:** Web Audio API (OscillatorNode, triangle wave)
-- **Storage:** localStorage (favorites, theme, settings, scratchpad)
-- **Hosting:** Firebase Hosting with PWA service worker
-- **Future:** Capacitor wrapper for iOS App Store
+* **Build:** Vite + React 18
+* **Styling:** CSS custom properties (tokens.css) + component CSS modules
+* **Fonts:** Outfit (UI), IBM Plex Mono (chord names, data)
+* **Audio:** Web Audio API (OscillatorNode, triangle wave)
+* **Storage:** localStorage (favorites, theme, settings, scratchpad)
+* **Hosting:** Firebase Hosting with PWA service worker
+* **Future:** Capacitor wrapper for iOS App Store
 
 ### File Structure
 
@@ -187,22 +187,22 @@ export const styleGuide = [
 
 ### Browse Screen (Home — Grid View)
 
-- **Header:** J6 badge (Roland orange) + "Chord Guide" + "AIRA" mono subtitle. Dark/light toggle + grid/list toggle.
-- **Search bar:** Real-time filter across set number, genre, chord names. Sticky below header.
-- **Genre filter pills:** Horizontally scrollable. "All" pre-selected. Active = Roland orange fill. 10 broad families.
-- **Grid:** 2-column on mobile (375–430px), 3-column on iPad (768px+). Each card: set number in genre color (mono), C-key chord name, genre pill, heart icon. Left border in genre color. Min height 72px.
-- **List view:** Toggle from header. Single-column, shows set number + genre + C/G chord names.
-- **Random FAB:** 56px orange circle, bottom-right corner. Opens random set detail. Primary cold-start action.
-- **Bottom tab bar:** Browse (active), Styles, Favorites. Active tab in Roland orange.
+* **Header:** J6 badge (Roland orange) + "Chord Guide" + "AIRA" mono subtitle. Dark/light toggle + grid/list toggle.
+* **Search bar:** Real-time filter across set number, genre, chord names. Sticky below header.
+* **Genre filter pills:** Horizontally scrollable. "All" pre-selected. Active = Roland orange fill. 10 broad families.
+* **Grid:** 2-column on mobile (375–430px), 3-column on iPad (768px+). Each card: set number in genre color (mono), C-key chord name, genre pill, heart icon. Left border in genre color. Min height 72px.
+* **List view:** Toggle from header. Single-column, shows set number + genre + C/G chord names.
+* **Random FAB:** 56px orange circle, bottom-right corner. Opens random set detail. Primary cold-start action.
+* **Bottom tab bar:** Browse (active), Styles, Favorites. Active tab in Roland orange.
 
 ### Detail View (Chord Set — Slide-Up Modal)
 
-- **Header:** Set number + genre tag + heart + mute toggle + close (X).
-- **Key Grid (piano-style, 2 rows):** Black keys (C#, D#, F#, G#, A#) offset above white keys (C, D, E, F, G, A, B), mimicking a real keyboard. Black keys darker background (#2A2A2A), slightly narrower. White keys lighter (#1A1A1A). Each button: key letter (small, above) + chord name (IBM Plex Mono). Tap = highlight orange + play chord. Min height 68px for comfortable thumb targets. Selected key = Roland orange fill.
-- **Chord Panel:** Large chord name + voicing note chips (e.g., "D4 · A#3 · D#3 · C3") + one-line flavor description.
-- **Progression Suggestions:** 3-4 cards per genre family. Key button chips in genre color → chord name → roman numeral (muted). Play Loop + Add to Scratchpad buttons.
-- **Scratchpad:** Tap keys to build sequence. Chord chips with remove-on-tap. Play/Stop/Clear/Save + BPM control (default 90). Max 16 steps. Scoped per set.
-- **Below the fold:** Similar Sets (2-3 cards), Theory Mode (if enabled).
+* **Header:** Set number + genre tag + heart + mute toggle + close (X).
+* **Key Grid (piano-style, 2 rows):** Black keys (C#, D#, F#, G#, A#) offset above white keys (C, D, E, F, G, A, B), mimicking a real keyboard. Black keys darker background (#2A2A2A), slightly narrower. White keys lighter (#1A1A1A). Each button: key letter (small, above) + chord name (IBM Plex Mono). Tap = highlight orange + play chord. Min height 68px for comfortable thumb targets. Selected key = Roland orange fill.
+* **Chord Panel:** Large chord name + voicing note chips (e.g., "D4 · A#3 · D#3 · C3") + one-line flavor description.
+* **Progression Suggestions:** 3-4 cards per genre family. Key button chips in genre color → chord name → roman numeral (muted). Play Loop + Add to Scratchpad buttons.
+* **Scratchpad:** Tap keys to build sequence. Chord chips with remove-on-tap. Play/Stop/Clear/Save + BPM control (default 90). Max 16 steps. Scoped per set.
+* **Below the fold:** Similar Sets (2-3 cards), Theory Mode (if enabled).
 
 ### Styles Tab
 
@@ -218,23 +218,24 @@ Grid/list of hearted sets. Saved scratchpad progressions shown under each set. "
 
 One shared `AudioContext` instance, two usage patterns:
 
+
 1. **Key Tap Preview:** Tap key → chord plays once. Instant, no UI state change.
 2. **Loop Playback:** Play on suggestion/scratchpad → chords in sequence, looping. Play/Stop state, BPM control.
 
 ### Synthesis
 
-- `OscillatorNode` (type: `triangle`) + `GainNode` per note
-- Attack: 0 → 0.15 gain over 20ms. Release: 0 over 400ms.
-- Loop: each slot = `60 / BPM` seconds. Release at 80% of slot duration.
-- Schedule all steps via `audioContext.currentTime` offsets — no `setInterval`.
-- Global mute toggle. Master gain 0–1.
+* `OscillatorNode` (type: `triangle`) + `GainNode` per note
+* Attack: 0 → 0.15 gain over 20ms. Release: 0 over 400ms.
+* Loop: each slot = `60 / BPM` seconds. Release at 80% of slot duration.
+* Schedule all steps via `audioContext.currentTime` offsets — no `setInterval`.
+* Global mute toggle. Master gain 0–1.
 
 ### iOS Safari
 
-- Create `AudioContext` lazily on first user gesture (tap/click)
-- Call `audioContext.resume()` before every playback
-- Store in module-level ref, not React state
-- Key grid tap IS the user gesture — no separate "enable audio" modal
+* Create `AudioContext` lazily on first user gesture (tap/click)
+* Call `audioContext.resume()` before every playback
+* Store in module-level ref, not React state
+* Key grid tap IS the user gesture — no separate "enable audio" modal
 
 ### noteToFreq.js
 
@@ -267,30 +268,30 @@ Genre family colors defined in `genreConfig.js` (see above).
 
 ### Typography
 
-- **UI:** Outfit (400, 500, 600) — Google Fonts
-- **Data:** IBM Plex Mono (400, 500) — chord names, set numbers, key labels, voicing notes
+* **UI:** Outfit (400, 500, 600) — Google Fonts
+* **Data:** IBM Plex Mono (400, 500) — chord names, set numbers, key labels, voicing notes
 
 ### Touch Targets
 
-- Key grid buttons: min 56×56px
-- All interactive elements: min 44×44px (Apple HIG)
-- Random FAB: 56px circle
-- Genre filter pills: min 36px tall
-- Scratchpad chord chips: 48px tall
+* Key grid buttons: min 56×56px
+* All interactive elements: min 44×44px (Apple HIG)
+* Random FAB: 56px circle
+* Genre filter pills: min 36px tall
+* Scratchpad chord chips: 48px tall
 
 ### Responsive Breakpoints
 
-- 375px: iPhone SE — 2-column grid, compact key grid
-- 430px: iPhone Pro Max — same layout, more breathing room
-- 768px: iPad — 3-column grid, wider key grid buttons
-- 1024px: iPad landscape — max content width, centered
+* 375px: iPhone SE — 2-column grid, compact key grid
+* 430px: iPhone Pro Max — same layout, more breathing room
+* 768px: iPad — 3-column grid, wider key grid buttons
+* 1024px: iPad landscape — max content width, centered
 
 ## State Management
 
 All persisted to `localStorage`:
 
 | Key | Data | Purpose |
-|-----|------|---------|
+|----|----|----|
 | `j6_favorites` | Set ID array | Hearted chord sets |
 | `j6_theme` | `"dark"` / `"light"` | Theme preference (dark default) |
 | `j6_theory_mode` | boolean | Theory mode toggle (off default) |
@@ -299,10 +300,10 @@ All persisted to `localStorage`:
 
 ## PWA Configuration
 
-- Service worker for offline caching (all static assets + data)
-- Web app manifest with J-6 Chord Guide name, Roland orange theme color
-- Icons for home screen installation
-- Structured for future Capacitor wrapping (no browser-only API hard dependencies without fallbacks)
+* Service worker for offline caching (all static assets + data)
+* Web app manifest with J-6 Chord Guide name, Roland orange theme color
+* Icons for home screen installation
+* Structured for future Capacitor wrapping (no browser-only API hard dependencies without fallbacks)
 
 ## Progression Data
 
@@ -326,9 +327,12 @@ Curated progressions by genre family (all defined in root key C, transposed at r
 
 ## Build Phases
 
+
 1. **Data** — chordSets.js, genreConfig.js, progressions.js, styleGuide.js
 2. **Browse Screen** — App shell, grid, genre filter, search, random button, list view
 3. **Detail View + Audio** — Modal, key grid, chord panel, audio engine
 4. **Progressions** — Transposition logic, suggestion cards, loop playback
 5. **Scratchpad** — Sequence builder, BPM control, save/load
 6. **Polish** — Favorites, style guide tab, theory mode, similar sets, responsive audit, PWA setup, Firebase deploy config
+
+

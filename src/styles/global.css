@@ -17,6 +17,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+}
+
 .mono {
   font-family: 'IBM Plex Mono', monospace;
 }
