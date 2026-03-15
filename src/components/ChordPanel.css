@@ -1,0 +1,35 @@
+.chord-panel {
+  padding: 16px;
+  text-align: center;
+  min-height: 80px;
+}
+
+.chord-panel-name {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.chord-panel-notes {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.chord-panel-note {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--text-sub);
+  background: var(--bg);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.chord-panel-empty {
+  color: var(--text-sub);
+  font-size: 14px;
+  padding: 20px 0;
+}
