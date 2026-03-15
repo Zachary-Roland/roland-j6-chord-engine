@@ -108,7 +108,7 @@ export function useAudio() {
     }, (duration + 0.5) * 1000);
   }, [isMuted, playMode, playNotesChord, playNotesArp]);
 
-  const playLoop = useCallback((chordSequence, bpm = 90) => {
+  const playLoop = useCallback((chordSequence, bpm = 90, repeat = 'once') => {
     if (!chordSequence || chordSequence.length === 0) return;
 
     const ctx = getAudioContext();
@@ -116,22 +116,44 @@ export function useAudio() {
 
     const beatDuration = 60 / bpm;
     let stepIndex = 0;
+    const totalSteps = chordSequence.length;
 
     const scheduleNext = () => {
       if (!isLoopingRef.current) return;
 
       playChord(chordSequence[stepIndex].notes, beatDuration);
-      stepIndex = (stepIndex + 1) % chordSequence.length;
+      stepIndex++;
 
-      loopTimeoutRef.current = setTimeout(scheduleNext, beatDuration * 1000);
+      if (stepIndex >= totalSteps) {
+        if (repeat === 'continuous') {
+          stepIndex = 0;
+          loopTimeoutRef.current = setTimeout(scheduleNext, beatDuration * 1000);
+        } else {
+          // 'once' — stop after finishing
+          loopTimeoutRef.current = setTimeout(() => {
+            isLoopingRef.current = false;
+            setIsLooping(false);
+          }, beatDuration * 1000);
+        }
+      } else {
+        loopTimeoutRef.current = setTimeout(scheduleNext, beatDuration * 1000);
+      }
     };
 
     isLoopingRef.current = true;
     setIsLooping(true);
 
     playChord(chordSequence[0].notes, beatDuration);
-    stepIndex = 1 % chordSequence.length;
-    loopTimeoutRef.current = setTimeout(scheduleNext, beatDuration * 1000);
+    stepIndex = 1;
+    if (stepIndex < totalSteps) {
+      loopTimeoutRef.current = setTimeout(scheduleNext, beatDuration * 1000);
+    } else {
+      // Single-chord sequence
+      loopTimeoutRef.current = setTimeout(() => {
+        isLoopingRef.current = false;
+        setIsLooping(false);
+      }, beatDuration * 1000);
+    }
   }, [playChord]);
 
   const stopLoop = useCallback(() => {

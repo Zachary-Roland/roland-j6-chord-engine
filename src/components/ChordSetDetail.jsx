@@ -28,6 +28,7 @@ export default function ChordSetDetail({
   autoPlayOnTap = true,
   scratchpadAutoAdd = true,
   defaultBpm = 90,
+  loopRepeat = 'once',
 }) {
   const [selectedKey, setSelectedKey] = useState('C');
   const scratchpadId = scratchpadMode === 'global' ? 'global' : (set?.id ?? 0);
@@ -96,7 +97,7 @@ export default function ChordSetDetail({
       .map(keyName => set.chords[keyName])
       .filter(c => c?.notes);
     if (chordSequence.length > 0) {
-      playLoop(chordSequence, scratchpad.bpm);
+      playLoop(chordSequence, scratchpad.bpm, loopRepeat);
     }
   };
 
@@ -227,6 +228,7 @@ export default function ChordSetDetail({
             playLoop={playLoop}
             stopLoop={stopLoop}
             isLooping={isLooping}
+            loopRepeat={loopRepeat}
             onAddToScratchpad={handleAddToScratchpad}
           />
         </div>

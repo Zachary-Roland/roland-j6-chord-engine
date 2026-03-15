@@ -34,11 +34,16 @@ export function useSettings() {
     loadSetting('j6_scratchpad_auto_add', true)
   );
 
+  const [loopRepeat, setLoopRepeat] = useState(() =>
+    loadSetting('j6_loop_repeat', 'once')
+  );
+
   useEffect(() => { saveSetting('j6_scratchpad_mode', scratchpadMode); }, [scratchpadMode]);
   useEffect(() => { saveSetting('j6_default_play_mode', defaultPlayMode); }, [defaultPlayMode]);
   useEffect(() => { saveSetting('j6_default_bpm', defaultBpm); }, [defaultBpm]);
   useEffect(() => { saveSetting('j6_auto_play_on_tap', autoPlayOnTap); }, [autoPlayOnTap]);
   useEffect(() => { saveSetting('j6_scratchpad_auto_add', scratchpadAutoAdd); }, [scratchpadAutoAdd]);
+  useEffect(() => { saveSetting('j6_loop_repeat', loopRepeat); }, [loopRepeat]);
 
   return {
     scratchpadMode, setScratchpadMode,
@@ -46,5 +51,6 @@ export function useSettings() {
     defaultBpm, setDefaultBpm,
     autoPlayOnTap, setAutoPlayOnTap,
     scratchpadAutoAdd, setScratchpadAutoAdd,
+    loopRepeat, setLoopRepeat,
   };
 }

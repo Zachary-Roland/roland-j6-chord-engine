@@ -30,6 +30,7 @@ function App() {
     defaultBpm, setDefaultBpm,
     autoPlayOnTap, setAutoPlayOnTap,
     scratchpadAutoAdd, setScratchpadAutoAdd,
+    loopRepeat, setLoopRepeat,
   } = useSettings();
 
   return (
@@ -79,6 +80,8 @@ function App() {
             setAutoPlayOnTap={setAutoPlayOnTap}
             scratchpadAutoAdd={scratchpadAutoAdd}
             setScratchpadAutoAdd={setScratchpadAutoAdd}
+            loopRepeat={loopRepeat}
+            setLoopRepeat={setLoopRepeat}
           />
         )}
       </main>
@@ -105,6 +108,7 @@ function App() {
         autoPlayOnTap={autoPlayOnTap}
         scratchpadAutoAdd={scratchpadAutoAdd}
         defaultBpm={defaultBpm}
+        loopRepeat={loopRepeat}
       />
 
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />

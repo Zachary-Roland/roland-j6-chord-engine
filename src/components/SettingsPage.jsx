@@ -13,6 +13,8 @@ export default function SettingsPage({
   setAutoPlayOnTap,
   scratchpadAutoAdd,
   setScratchpadAutoAdd,
+  loopRepeat,
+  setLoopRepeat,
 }) {
   return (
     <div className="settings-page">
@@ -108,6 +110,31 @@ export default function SettingsPage({
               onClick={() => setAutoPlayOnTap(false)}
             >
               Off
+            </button>
+          </div>
+        </div>
+
+        <div className="settings-row">
+          <div className="settings-row-label">
+            <span className="settings-row-name">Loop playback</span>
+            <span className="settings-row-desc">
+              {loopRepeat === 'once'
+                ? 'Play through the progression once and stop'
+                : 'Loop the progression continuously until stopped'}
+            </span>
+          </div>
+          <div className="settings-toggle-group">
+            <button
+              className={`settings-toggle-btn${loopRepeat === 'once' ? ' settings-toggle-btn--active' : ''}`}
+              onClick={() => setLoopRepeat('once')}
+            >
+              Once
+            </button>
+            <button
+              className={`settings-toggle-btn${loopRepeat === 'continuous' ? ' settings-toggle-btn--active' : ''}`}
+              onClick={() => setLoopRepeat('continuous')}
+            >
+              Loop
             </button>
           </div>
         </div>
