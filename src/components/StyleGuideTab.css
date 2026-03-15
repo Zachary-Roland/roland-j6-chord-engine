@@ -1,0 +1,92 @@
+.style-guide-tab {
+  padding: 16px;
+}
+
+.style-guide-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.style-guide-subtitle {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin-bottom: 16px;
+}
+
+.style-bank-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+
+.style-bank-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.style-bank-number {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+.style-bank-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.style-bank-character {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.style-bank-best-with {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.style-bank-genre-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: var(--orange);
+  color: white;
+  opacity: 0.85;
+}
+
+.style-bank-variations {
+  font-size: 12px;
+  color: var(--text-sub);
+  line-height: 1.4;
+}
+
+.variation-legend {
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.variation-legend-item {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.variation-legend-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  color: var(--text-pri);
+}

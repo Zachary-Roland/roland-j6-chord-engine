@@ -11,6 +11,7 @@ import BrowseGrid from './components/BrowseGrid';
 import ChordSetDetail from './components/ChordSetDetail';
 import { RandomButton } from './components/RandomButton';
 import FavoritesList from './components/FavoritesList';
+import StyleGuideTab from './components/StyleGuideTab';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -39,7 +40,7 @@ function App() {
             />
           </>
         )}
-        {activeTab === 'styles' && <div style={{ padding: '1rem' }}><p>Styles tab coming soon</p></div>}
+        {activeTab === 'styles' && <StyleGuideTab />}
         {activeTab === 'favorites' && (
           <FavoritesList
             favorites={favorites}
