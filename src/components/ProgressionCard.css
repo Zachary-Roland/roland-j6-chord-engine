@@ -1,0 +1,92 @@
+.progression-card {
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.progression-name {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.progression-vibe {
+  font-size: 12px;
+  color: var(--text-sub);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.progression-steps {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.progression-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 8px;
+  min-width: 48px;
+}
+
+.progression-step-key {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.progression-step-chord {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.progression-step-roman {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-top: 1px;
+}
+
+.progression-arrow {
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+.progression-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.progression-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-pri);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.progression-btn:active {
+  opacity: 0.8;
+}
+
+.progression-btn--playing {
+  background: var(--orange);
+  color: white;
+  border-color: var(--orange);
+}

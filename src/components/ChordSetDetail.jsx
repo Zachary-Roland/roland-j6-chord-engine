@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import KeyGrid from './KeyGrid';
 import ChordPanel from './ChordPanel';
+import ProgressionList from './ProgressionList';
 import { getGenreColor } from '../data/genreConfig';
 import './ChordSetDetail.css';
 
@@ -10,6 +11,9 @@ export default function ChordSetDetail({
   onToggleFavorite,
   onClose,
   playChord,
+  playLoop,
+  stopLoop,
+  isLooping,
   isMuted,
   toggleMute,
 }) {
@@ -88,10 +92,18 @@ export default function ChordSetDetail({
           <ChordPanel chord={set.chords[selectedKey]} />
         </div>
 
-        {/* Placeholder: Progression suggestions */}
+        {/* Progression suggestions */}
         <div className="detail-section">
           <div className="detail-section-title">Progression Suggestions</div>
-          <p style={{ color: 'var(--text-sub)', fontSize: 14 }}>Coming soon</p>
+          <ProgressionList
+            set={set}
+            selectedKey={selectedKey}
+            genreColor={genreColor}
+            playLoop={playLoop}
+            stopLoop={stopLoop}
+            isLooping={isLooping}
+            onAddToScratchpad={() => {}}
+          />
         </div>
 
         {/* Placeholder: Scratchpad */}

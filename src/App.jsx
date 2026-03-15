@@ -18,7 +18,7 @@ function App() {
   const [selectedSet, setSelectedSet] = useState(null);
   const { searchQuery, setSearchQuery, activeGenre, setActiveGenre, filteredSets } = useSearch();
   const { favorites, toggleFavorite, isFavorite } = useFavorites();
-  const { playChord, isMuted, toggleMute } = useAudio();
+  const { playChord, playLoop, stopLoop, isLooping, isMuted, toggleMute } = useAudio();
 
   return (
     <div className="app-shell">
@@ -52,6 +52,9 @@ function App() {
         onToggleFavorite={toggleFavorite}
         onClose={() => setSelectedSet(null)}
         playChord={playChord}
+        playLoop={playLoop}
+        stopLoop={stopLoop}
+        isLooping={isLooping}
         isMuted={isMuted}
         toggleMute={toggleMute}
       />
