@@ -15,34 +15,6 @@ A mobile-first web app companion for the **Roland AIRA J-6 Chord Synth**. Open i
 - **Scale Suggestions** — Compatible scales for each chord to guide melodic playing
 - **Settings** — Theme (dark/light), playback mode, default BPM, scratchpad behavior
 - **PWA** — Installable to your home screen, works offline
-- **Accessible** — WCAG AA compliant contrast, focus indicators, keyboard navigation, touch targets
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-## Build & Deploy
-
-```bash
-npm run build        # Production build to dist/
-npm run deploy       # Build + deploy to Firebase Hosting
-```
-
-Requires [Firebase CLI](https://firebase.google.com/docs/cli) for deployment.
-
-## Tech Stack
-
-- **React 18** + **Vite**
-- **Web Audio API** — Triangle wave synthesis with chord and arpeggio modes
-- **CSS Custom Properties** — Dark/light theming with Roland-inspired design tokens
-- **localStorage** — Favorites, settings, scratchpad persistence
-- **vite-plugin-pwa** — Service worker for offline support
-- **Firebase Hosting** — Static deployment
 
 ## Data Source
 
