@@ -1,7 +1,4 @@
 .genre-filter-wrapper {
-  position: sticky;
-  top: 104px; /* 56px header + ~48px search bar */
-  z-index: 80;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
 }

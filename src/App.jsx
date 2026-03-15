@@ -34,13 +34,19 @@ function App() {
 
   return (
     <div className="app-shell">
-      <Header theme={theme} toggleTheme={toggleTheme} viewMode={viewMode} setViewMode={setViewMode} />
-
-      <main>
+      <div className="sticky-top">
+        <Header theme={theme} toggleTheme={toggleTheme} viewMode={viewMode} setViewMode={setViewMode} />
         {activeTab === 'browse' && (
           <>
             <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
             <GenreFilter activeGenre={activeGenre} onGenreChange={setActiveGenre} />
+          </>
+        )}
+      </div>
+
+      <main>
+        {activeTab === 'browse' && (
+          <>
             <BrowseGrid
               sets={filteredSets}
               viewMode={viewMode}
