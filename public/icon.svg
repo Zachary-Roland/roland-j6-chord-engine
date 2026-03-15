@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#111111"/>
+  <text x="256" y="200" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="120" fill="#E8470A">J-6</text>
+  <text x="256" y="340" text-anchor="middle" font-family="sans-serif" font-weight="500" font-size="60" fill="#F0F0F0">CHORD</text>
+  <text x="256" y="410" text-anchor="middle" font-family="sans-serif" font-weight="400" font-size="50" fill="#A0A0A0">GUIDE</text>
+</svg>
