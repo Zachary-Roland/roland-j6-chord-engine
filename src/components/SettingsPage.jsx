@@ -24,7 +24,7 @@ function SettingsInstallSection() {
 
       {showInstructions && (
         <div className="settings-install-instructions">
-          <InstallInstructions />
+          <InstallInstructions device="desktop" />
         </div>
       )}
     </div>
