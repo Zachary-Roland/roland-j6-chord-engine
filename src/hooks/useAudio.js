@@ -3,12 +3,40 @@ import { noteToFreq } from '../utils/noteToFreq';
 
 // Module-level AudioContext (not in React state — avoids re-creation)
 let audioCtx = null;
+let audioUnlocked = false;
 
 function getAudioContext() {
   if (!audioCtx || audioCtx.state === 'closed') {
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    audioUnlocked = false;
+  }
+  // Always call resume synchronously within the user gesture
+  // iOS Safari requires this to unlock audio
+  if (!audioUnlocked || audioCtx.state === 'suspended') {
+    audioCtx.resume();
+    audioUnlocked = true;
   }
   return audioCtx;
+}
+
+// Pre-warm AudioContext on first user interaction anywhere in the app
+// This ensures the context is unlocked before the user taps a key
+if (typeof document !== 'undefined') {
+  const unlock = () => {
+    getAudioContext();
+    // Play a silent buffer to fully unlock on iOS
+    if (audioCtx) {
+      const buffer = audioCtx.createBuffer(1, 1, 22050);
+      const source = audioCtx.createBufferSource();
+      source.buffer = buffer;
+      source.connect(audioCtx.destination);
+      source.start(0);
+    }
+    document.removeEventListener('touchstart', unlock, true);
+    document.removeEventListener('click', unlock, true);
+  };
+  document.addEventListener('touchstart', unlock, true);
+  document.addEventListener('click', unlock, true);
 }
 
 // Playback modes: 'chord' = all notes at once, 'arp' = arpeggiated
@@ -91,30 +119,21 @@ export function useAudio(initialPlayMode = 'chord') {
 
     const ctx = getAudioContext();
 
-    // iOS Safari requires resume() to be awaited before scheduling audio
-    const doPlay = () => {
-      const masterGain = ctx.createGain();
-      masterGain.gain.setValueAtTime(0.15, ctx.currentTime);
-      masterGain.connect(ctx.destination);
+    const masterGain = ctx.createGain();
+    masterGain.gain.setValueAtTime(0.15, ctx.currentTime);
+    masterGain.connect(ctx.destination);
 
-      const oscs = playMode === 'arp'
-        ? playNotesArp(ctx, masterGain, notes, duration)
-        : playNotesChord(ctx, masterGain, notes, duration);
+    const oscs = playMode === 'arp'
+      ? playNotesArp(ctx, masterGain, notes, duration)
+      : playNotesChord(ctx, masterGain, notes, duration);
 
-      activeOscillators.current.push(...oscs);
+    activeOscillators.current.push(...oscs);
 
-      setTimeout(() => {
-        activeOscillators.current = activeOscillators.current.filter(
-          o => !oscs.includes(o)
-        );
-      }, (duration + 0.5) * 1000);
-    };
-
-    if (ctx.state === 'suspended') {
-      ctx.resume().then(doPlay);
-    } else {
-      doPlay();
-    }
+    setTimeout(() => {
+      activeOscillators.current = activeOscillators.current.filter(
+        o => !oscs.includes(o)
+      );
+    }, (duration + 0.5) * 1000);
   }, [playMode, playNotesChord, playNotesArp]);
 
   const playLoop = useCallback((chordSequence, bpm = 90, repeat = 'once') => {
