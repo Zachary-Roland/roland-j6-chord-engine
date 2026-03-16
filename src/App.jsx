@@ -15,6 +15,7 @@ import FavoritesList from './components/FavoritesList';
 import StyleGuideTab from './components/StyleGuideTab';
 import SettingsPage from './components/SettingsPage';
 import Toast from './components/Toast';
+import InstallPrompt from './components/InstallPrompt';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -112,6 +113,7 @@ function App() {
       />
 
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
+      <InstallPrompt />
       <Toast />
     </div>
   );

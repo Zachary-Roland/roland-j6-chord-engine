@@ -1,0 +1,62 @@
+.install-prompt {
+  position: fixed;
+  bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  left: 0;
+  right: 0;
+  z-index: 150;
+  animation: slideUp 0.3s ease-out;
+}
+
+.install-prompt-card {
+  margin: 12px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+
+.install-prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.install-prompt-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.install-prompt-close {
+  background: none;
+  border: none;
+  color: var(--text-sub);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+
+.install-prompt-steps {
+  font-size: 13px;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+
+.install-prompt-steps strong {
+  color: var(--text-pri);
+}
+
+.install-prompt-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin: 0 2px;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
