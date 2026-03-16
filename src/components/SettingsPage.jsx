@@ -1,14 +1,9 @@
 import { useState } from 'react';
-import { InstallInstructions, resetInstallPrompt } from './InstallPrompt';
+import { InstallInstructions } from './InstallPrompt';
 import './SettingsPage.css';
 
 function SettingsInstallSection() {
   const [showInstructions, setShowInstructions] = useState(false);
-
-  function handleResetPrompt() {
-    resetInstallPrompt();
-    setShowInstructions(false);
-  }
 
   return (
     <div className="settings-section">
@@ -30,9 +25,6 @@ function SettingsInstallSection() {
       {showInstructions && (
         <div className="settings-install-instructions">
           <InstallInstructions />
-          <button className="settings-reset-prompt-btn" onClick={handleResetPrompt}>
-            Re-enable install popup
-          </button>
         </div>
       )}
     </div>
