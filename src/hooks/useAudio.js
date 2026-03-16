@@ -90,23 +90,31 @@ export function useAudio(initialPlayMode = 'chord') {
     if (isMutedRef.current || !notes || notes.length === 0) return;
 
     const ctx = getAudioContext();
-    ctx.resume();
 
-    const masterGain = ctx.createGain();
-    masterGain.gain.setValueAtTime(0.15, ctx.currentTime);
-    masterGain.connect(ctx.destination);
+    // iOS Safari requires resume() to be awaited before scheduling audio
+    const doPlay = () => {
+      const masterGain = ctx.createGain();
+      masterGain.gain.setValueAtTime(0.15, ctx.currentTime);
+      masterGain.connect(ctx.destination);
 
-    const oscs = playMode === 'arp'
-      ? playNotesArp(ctx, masterGain, notes, duration)
-      : playNotesChord(ctx, masterGain, notes, duration);
+      const oscs = playMode === 'arp'
+        ? playNotesArp(ctx, masterGain, notes, duration)
+        : playNotesChord(ctx, masterGain, notes, duration);
 
-    activeOscillators.current.push(...oscs);
+      activeOscillators.current.push(...oscs);
 
-    setTimeout(() => {
-      activeOscillators.current = activeOscillators.current.filter(
-        o => !oscs.includes(o)
-      );
-    }, (duration + 0.5) * 1000);
+      setTimeout(() => {
+        activeOscillators.current = activeOscillators.current.filter(
+          o => !oscs.includes(o)
+        );
+      }, (duration + 0.5) * 1000);
+    };
+
+    if (ctx.state === 'suspended') {
+      ctx.resume().then(doPlay);
+    } else {
+      doPlay();
+    }
   }, [playMode, playNotesChord, playNotesArp]);
 
   const playLoop = useCallback((chordSequence, bpm = 90, repeat = 'once') => {
