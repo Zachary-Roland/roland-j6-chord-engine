@@ -1,4 +1,43 @@
+import { useState } from 'react';
+import { InstallInstructions, resetInstallPrompt } from './InstallPrompt';
 import './SettingsPage.css';
+
+function SettingsInstallSection() {
+  const [showInstructions, setShowInstructions] = useState(false);
+
+  function handleResetPrompt() {
+    resetInstallPrompt();
+    setShowInstructions(false);
+  }
+
+  return (
+    <div className="settings-section">
+      <h3 className="settings-section-title">Install</h3>
+
+      <div className="settings-row">
+        <div className="settings-row-label">
+          <span className="settings-row-name">Add to Home Screen</span>
+          <span className="settings-row-desc">Install as a standalone app on your phone</span>
+        </div>
+        <button
+          className="settings-toggle-btn settings-toggle-btn--active"
+          onClick={() => setShowInstructions(!showInstructions)}
+        >
+          {showInstructions ? 'Hide' : 'Show'}
+        </button>
+      </div>
+
+      {showInstructions && (
+        <div className="settings-install-instructions">
+          <InstallInstructions />
+          <button className="settings-reset-prompt-btn" onClick={handleResetPrompt}>
+            Re-enable install popup
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function SettingsPage({
   theme,
@@ -193,6 +232,8 @@ export default function SettingsPage({
           </div>
         </div>
       </div>
+
+      <SettingsInstallSection />
 
       <div className="settings-section">
         <h3 className="settings-section-title">About</h3>
