@@ -46,6 +46,7 @@ export default function SettingsPage({
   setScratchpadAutoAdd,
   loopRepeat,
   setLoopRepeat,
+  onShowGuide,
 }) {
   return (
     <div className="settings-page">
@@ -234,6 +235,13 @@ export default function SettingsPage({
           <br />
           Chord data from the Roland AIRA J-6 Owner's Manual v1.02.
         </p>
+        <button
+          className="settings-toggle-btn settings-toggle-btn--active"
+          onClick={onShowGuide}
+          style={{ marginTop: 10 }}
+        >
+          View User Guide
+        </button>
       </div>
     </div>
   );

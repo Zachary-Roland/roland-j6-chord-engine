@@ -33,7 +33,7 @@ const ListIcon = () => (
   </svg>
 );
 
-export default function Header({ theme, toggleTheme, viewMode, setViewMode }) {
+export default function Header({ theme, toggleTheme, viewMode, setViewMode, onShowGuide }) {
   return (
     <header className="header">
       <div className="header-brand">
@@ -44,6 +44,13 @@ export default function Header({ theme, toggleTheme, viewMode, setViewMode }) {
         </div>
       </div>
       <div className="header-actions">
+        <button
+          className="header-btn"
+          onClick={onShowGuide}
+          aria-label="Open user guide"
+        >
+          ?
+        </button>
         <button
           className="header-btn"
           onClick={toggleTheme}

@@ -16,12 +16,14 @@ import StyleGuideTab from './components/StyleGuideTab';
 import SettingsPage from './components/SettingsPage';
 import Toast from './components/Toast';
 import InstallPrompt from './components/InstallPrompt';
+import UserGuide from './components/UserGuide';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
   const [activeTab, setActiveTab] = useState('browse');
   const [viewMode, setViewMode] = useState('grid');
   const [selectedSet, setSelectedSet] = useState(null);
+  const [showGuide, setShowGuide] = useState(false);
   const { searchQuery, setSearchQuery, activeGenre, setActiveGenre, filteredSets } = useSearch();
   const { favorites, toggleFavorite, isFavorite } = useFavorites();
   const {
@@ -37,7 +39,7 @@ function App() {
   return (
     <div className="app-shell">
       <div className="sticky-top">
-        <Header theme={theme} toggleTheme={toggleTheme} viewMode={viewMode} setViewMode={setViewMode} />
+        <Header theme={theme} toggleTheme={toggleTheme} viewMode={viewMode} setViewMode={setViewMode} onShowGuide={() => setShowGuide(true)} />
         {activeTab === 'browse' && (
           <>
             <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
@@ -71,6 +73,7 @@ function App() {
           <SettingsPage
             theme={theme}
             toggleTheme={toggleTheme}
+            onShowGuide={() => setShowGuide(true)}
             scratchpadMode={scratchpadMode}
             setScratchpadMode={setScratchpadMode}
             defaultPlayMode={defaultPlayMode}
@@ -111,6 +114,8 @@ function App() {
         defaultBpm={defaultBpm}
         loopRepeat={loopRepeat}
       />
+
+      {showGuide && <UserGuide onClose={() => setShowGuide(false)} />}
 
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
       <InstallPrompt />
