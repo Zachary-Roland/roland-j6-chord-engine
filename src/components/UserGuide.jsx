@@ -30,6 +30,8 @@ export default function UserGuide({ onClose }) {
             <div className="user-guide-section-title">Playing Chords</div>
             <div className="user-guide-text">
               Tap any card to open the detail view. The <strong>piano keyboard</strong> shows all 12 chords in the set. Tap a key to hear the chord — toggle between <strong>chord and arpeggio mode</strong> with the arp icon. The chord name and individual voicing notes appear below the keyboard.
+              <br /><br />
+              <strong>No sound on iPhone?</strong> Make sure silent mode is off.
             </div>
           </div>
 
