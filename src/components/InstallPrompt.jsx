@@ -106,7 +106,7 @@ export default function InstallPrompt() {
             Maybe Later
           </button>
           <button className="install-prompt-btn install-prompt-btn--never" onClick={neverShowAgain}>
-            Don't Show Again
+            Don&apos;t Show Again
           </button>
         </div>
       </div>

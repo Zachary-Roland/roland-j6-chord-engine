@@ -22,7 +22,7 @@ export default function UserGuide({ onClose }) {
           <div className="user-guide-section">
             <div className="user-guide-section-title">Browsing Chord Sets</div>
             <div className="user-guide-text">
-              Scroll the grid to browse all 100 sets. Use <strong>genre filter pills</strong> to narrow by style (Pop, Jazz, Neo Soul, etc.). Search by set number, genre, or chord name — try <strong>"m9"</strong> or <strong>"72"</strong>. Toggle grid/list view with the icon in the header. Tap the <strong>orange dice button</strong> for a random set.
+              Scroll the grid to browse all 100 sets. Use <strong>genre filter pills</strong> to narrow by style (Pop, Jazz, Neo Soul, etc.). Search by set number, genre, or chord name — try <strong>&quot;m9&quot;</strong> or <strong>&quot;72&quot;</strong>. Toggle grid/list view with the icon in the header. Tap the <strong>orange dice button</strong> for a random set.
             </div>
           </div>
 
@@ -38,7 +38,7 @@ export default function UserGuide({ onClose }) {
           <div className="user-guide-section">
             <div className="user-guide-section-title">Using Progression Suggestions</div>
             <div className="user-guide-text">
-              Scroll down in the detail view to find <strong>curated progressions</strong> for that genre. Each shows the chord sequence with actual names from the set. Tap <strong>Play</strong> to hear it loop — tap again to stop. Tap <strong>"Add to Scratchpad"</strong> to copy it for editing.
+              Scroll down in the detail view to find <strong>curated progressions</strong> for that genre. Each shows the chord sequence with actual names from the set. Tap <strong>Play</strong> to hear it loop — tap again to stop. Tap <strong>&quot;Add to Scratchpad&quot;</strong> to copy it for editing.
             </div>
           </div>
 
