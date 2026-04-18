@@ -1,6 +1,5 @@
 import { useState, useMemo } from 'react';
 import { chordSets } from '../data/chordSets';
-import { genreToFamily } from '../data/genreConfig';
 
 export function useSearch() {
   const [searchQuery, setSearchQuery] = useState('');

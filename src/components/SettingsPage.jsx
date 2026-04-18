@@ -233,7 +233,7 @@ export default function SettingsPage({
         <p className="settings-about">
           J-6 Chord Guide — companion app for the Roland AIRA J-6 Chord Synth.
           <br />
-          Chord data from the Roland AIRA J-6 Owner's Manual v1.02.
+          Chord data from the Roland AIRA J-6 Owner&apos;s Manual v1.02.
         </p>
         <button
           className="settings-toggle-btn settings-toggle-btn--active"

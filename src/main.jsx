@@ -10,7 +10,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ErrorBoundary
       FallbackComponent={AppErrorFallback}
       onError={(error, info) => {
-        // eslint-disable-next-line no-console
         console.error('ErrorBoundary caught:', error, info)
       }}
     >

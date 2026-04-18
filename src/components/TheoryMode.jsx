@@ -1,6 +1,6 @@
 import './TheoryMode.css';
 
-const getScaleSuggestions = (chordName, keyName) => {
+const getScaleSuggestions = (chordName) => {
   const name = chordName.toLowerCase();
 
   if (name.includes('dim')) {
@@ -58,7 +58,7 @@ const getScaleSuggestions = (chordName, keyName) => {
 export default function TheoryMode({ chordName, keyName }) {
   if (!chordName) return null;
 
-  const suggestions = getScaleSuggestions(chordName, keyName);
+  const suggestions = getScaleSuggestions(chordName);
 
   return (
     <div className="theory-mode">

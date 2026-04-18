@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import './AppErrorFallback.css';
 
 export default function AppErrorFallback({ error, resetErrorBoundary }) {
