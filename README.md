@@ -99,12 +99,13 @@ Below the scale suggestions, the app recommends **2–3 other chord sets** that 
 
 ### Style Guide
 
-The **Styles tab** (accessible from the bottom navigation) is a reference for the J-6's 9 style banks and their 12 variations. Each bank card shows:
+The **Styles tab** (accessible from the bottom navigation) is a manual-faithful reference for the J-6's 9 style banks, grouped by their three categories:
 
-- The bank number and name (Arpeggio, Beat, Phrase)
-- A description of the sonic character
-- Which genres it pairs well with
-- A density breakdown: variations 1–4 are sparse, 5–8 medium, 9–12 dense/complex
+- **ARPEGGIO** — Styles 1–2 (8th and 16th arpeggios, with UP / UP&DOWN / DOWN variants and their triplet forms)
+- **BEAT** — Styles 3–5 (note-duration hits, plus two families of 16th-note on/off rhythmic patterns)
+- **PHRASE** — Styles 6–9 (Chord Phrases and Strummed Chord Phrases, Simple and Rhythmic; all 12 variation slots ship blank for you to program your own)
+
+Each style is a collapsible card — tap to reveal the exact 12 variation names from the manual (e.g. `UP1 (8th Triplet)`, `o~~o (dotted 8th and 16th)`). A notation legend at the bottom explains the 16th-grid symbols (`o`, `_`, `o~`, `o~~`).
 
 This information is scattered across the J-6 manual and doesn't exist in a clean, scannable format anywhere else online.
 
