@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { styleGuide, rhythmNotation } from '../data/styleGuide';
+import { styleGuide, rhythmNotation } from '../../data/styleGuide';
 import './StyleGuideTab.css';
 
 const CATEGORIES = ['ARPEGGIO', 'BEAT', 'PHRASE'];

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { InstallInstructions } from './InstallPrompt';
+import { InstallInstructions } from '../layout/InstallPrompt';
 import './SettingsPage.css';
 
 function SettingsInstallSection() {

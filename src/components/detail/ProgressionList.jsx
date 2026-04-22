@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { progressions } from '../data/progressions';
-import { getProgressionChords } from '../utils/transpose';
+import { progressions } from '../../data/progressions';
+import { getProgressionChords } from '../../utils/transpose';
 import ProgressionCard from './ProgressionCard';
 import './ProgressionList.css';
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { chordSets } from '../data/chordSets';
+import { chordSets } from '../../data/chordSets';
 import BrowseGrid from './BrowseGrid';
 import './FavoritesList.css';
 

@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
-import { chordSets } from '../data/chordSets';
-import { getGenreColor } from '../data/genreConfig';
-import { needsDarkText } from '../utils/color';
+import { chordSets } from '../../data/chordSets';
+import { getGenreColor } from '../../data/genreConfig';
+import { needsDarkText } from '../../utils/color';
 import './SimilarSets.css';
 
 const getSimilarSets = (currentSet) => {

@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { ErrorBoundary } from 'react-error-boundary'
 import App from './App.jsx'
-import AppErrorFallback from './components/AppErrorFallback.jsx'
+import AppErrorFallback from './components/layout/AppErrorFallback.jsx'
 import './styles/global.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

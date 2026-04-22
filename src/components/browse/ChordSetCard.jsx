@@ -1,5 +1,5 @@
-import { getGenreColor } from '../data/genreConfig';
-import { needsDarkText } from '../utils/color';
+import { getGenreColor } from '../../data/genreConfig';
+import { needsDarkText } from '../../utils/color';
 import './ChordSetCard.css';
 
 const HeartIcon = ({ filled }) => (

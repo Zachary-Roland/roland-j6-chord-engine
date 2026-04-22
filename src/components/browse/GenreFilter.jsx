@@ -1,4 +1,4 @@
-import { genreFamilies } from '../data/genreConfig';
+import { genreFamilies } from '../../data/genreConfig';
 import './GenreFilter.css';
 
 export default function GenreFilter({ activeGenre, onGenreChange }) {

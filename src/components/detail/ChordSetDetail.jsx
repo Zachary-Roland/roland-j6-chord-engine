@@ -5,9 +5,9 @@ import ProgressionList from './ProgressionList';
 import Scratchpad from './Scratchpad';
 import SimilarSets from './SimilarSets';
 import TheoryMode from './TheoryMode';
-import { toast } from './Toast';
-import { useScratchpad } from '../hooks/useScratchpad';
-import { getGenreColor } from '../data/genreConfig';
+import { toast } from '../layout/Toast';
+import { useScratchpad } from '../../hooks/useScratchpad';
+import { getGenreColor } from '../../data/genreConfig';
 import './ChordSetDetail.css';
 
 export default function ChordSetDetail({
