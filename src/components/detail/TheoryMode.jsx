@@ -62,7 +62,7 @@ export default function TheoryMode({ chordName, keyName }) {
 
   return (
     <div className="theory-mode">
-      <div className="theory-mode-title">Scale Suggestions — {keyName} {chordName}</div>
+      <div className="theory-mode-context">Root {keyName} <span className="theory-mode-chord">({chordName})</span></div>
       {suggestions.map((item, i) => (
         <div key={i} className="theory-scale-card">
           <div className="theory-scale-name">{item.scale}</div>
